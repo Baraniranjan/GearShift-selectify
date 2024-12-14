@@ -1,4 +1,4 @@
-import { loading } from "../assets";
+import { searchMd } from "../assets";
 
 const Generating = ({ className }) => {
   return (
@@ -7,8 +7,8 @@ const Generating = ({ className }) => {
         className || ""
       } text-base`}
     >
-      <img className="w-5 h-5 mr-4" src={loading} alt="Loading" />
-      AI is generating
+      <img className="w-5 h-5 mr-4" src={searchMd} alt="Loading" />
+      <input type="email" placeholder="Search something..." class="w-full outline-none bg-transparent text-white-600 text-sm" />
     </div>
   );
 };

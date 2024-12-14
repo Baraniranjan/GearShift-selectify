@@ -54,18 +54,18 @@ export const navigation = [
   },
   {
     id: "3",
-    title: "Roadmap",
-    url: "#roadmap",
+    title: "Upload Resume",
+    url: "/upload-resume",
   },
   {
     id: "4",
-    title: "New account",
-    url: "#signup",
+    title: "Logout",
+    url: "/logout",
     onlyMobile: true,
   },
   {
     id: "5",
-    title: "Sign in",
+    title: "Log in",
     url: "#login",
     onlyMobile: true,
   },
