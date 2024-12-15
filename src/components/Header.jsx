@@ -71,7 +71,7 @@ const Header = () => {
         >
           Logout
         </a>
-        <Button className="hidden lg:flex" href="#login">
+        <Button className="hidden lg:flex" href="/login">
           LogIn
         </Button>
 
