@@ -14,7 +14,7 @@ const Benefits = () => {
           title="Search Smarter, Not Harder with Selectify"
         />
 
-        <div className="flex flex-wrap gap-10 mb-10">
+        <div className="flex flex-wrap gap-5 mb-5">
           {benefits.map((item) => (
             <div
               className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[18rem]"
@@ -23,21 +23,41 @@ const Benefits = () => {
               }}
               key={item.id}
             >
-              <div className="relative z-2 flex flex-col min-h-[12rem] p-[2.4rem] pointer-events-none">
-                <h5 className="h5 mb-5">{item.title}</h5>
+              {/* <div className="relative z-2 flex flex-col min-h-[8.5rem] p-[1.5rem] pointer-events-none">
+                <h5 className="mb-5">{item.title}</h5>
                 <p className="body-2 mb-6 text-n-3">{item.text}</p>
-                <div className="flex items-center mt-auto">
+                <div className="flex items-center mt-1">
                   <img
                     src={item.iconUrl}
                     width={36}
                     height={36}
                     alt={item.title}
                   />
-                  <p className="ml-auto pl-5 font-code text-[0.75rem] font-bold text-n-1 uppercase tracking-wider">
+                  <p className="ml-auto pl-3 font-code text-[0.75rem] font-bold text-n-1 uppercase tracking-wider">
                     Explore more
                   </p>
                   <Arrow className="p-0" />
                 </div>
+              </div> */}
+
+              <div className="relative z-2 flex flex-col min-h-[8.5rem] p-[1.5rem] pointer-events-none">
+              <div className="flex items-center mt-1">
+                  <img
+                    src={item.iconUrl}
+                    width={36}
+                    height={36}
+                    alt={item.title}
+                  />
+                  <h5 className="ml-auto pl-3">
+                    {item.title}
+                  </h5>
+                  {/* <Arrow className="p-0" /> */}
+                </div>
+                
+                <p className="body-2 mb-6 text-n-3">{item.text}</p>
+                <p className="mt-5 m-auto font-code text-[0.75rem] font-bold text-n-1 uppercase tracking-wider">
+                    Explore more
+                </p>
               </div>
 
               {item.light && <GradientLight />}

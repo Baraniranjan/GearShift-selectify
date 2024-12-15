@@ -25,6 +25,7 @@ import background from "./background.jpg";
 import curve from "./hero/curve.png";
 import robot from "./hero/robot.jpg";
 import heroBackground from "./hero/hero-background.jpg";
+import owl from "./hero/owl.jfif";
 
 import curve1 from "./collaboration/curve-1.svg";
 import curve2 from "./collaboration/curve-2.svg";
@@ -68,8 +69,16 @@ import benefitIcon1 from "./benefits/icon-1.svg";
 import benefitIcon2 from "./benefits/icon-2.svg";
 import benefitIcon3 from "./benefits/icon-3.svg";
 import benefitIcon4 from "./benefits/icon-4.svg";
+import benefitIcon5 from "./benefits/icon-5.svg";
 import benefitImage2 from "./benefits/image-2.png";
 import benefitDramaIcon from "./benefits/drama.png";
+import benefitActorIcon from "./benefits/actor_icon.png";
+import benefitDirectorIcon from "./benefits/director_icon.png";
+import benefitMicrophoneIcon from "./benefits/microphone_icon.png";
+import benefitSoundIcon from "./benefits/sound_icon.png";
+import benefitVideoLessonIcon from "./benefits/video-lesson_icon.png";
+import benefitVoiceSearchIcon from "./benefits/voice-search_icon.png";
+import benefitCamerIcon from "./benefits/camera_icon.png"
 
 import discordBlack from "./socials/discord.svg";
 import facebook from "./socials/facebook.svg";
@@ -103,6 +112,7 @@ export {
   background,
   curve,
   robot,
+  owl,
   heroBackground,
   curve1,
   curve2,
@@ -141,8 +151,16 @@ export {
   benefitIcon2,
   benefitIcon3,
   benefitIcon4,
+  benefitIcon5,
   benefitImage2,
   benefitDramaIcon,
+  benefitActorIcon,
+  benefitDirectorIcon,
+  benefitMicrophoneIcon,
+  benefitSoundIcon,
+  benefitVideoLessonIcon,
+  benefitVoiceSearchIcon,
+  benefitCamerIcon,
   discordBlack,
   facebook,
   instagram,

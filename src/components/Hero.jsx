@@ -1,4 +1,4 @@
-import { curve, heroBackground, robot } from "../assets";
+import { curve, heroBackground, robot, owl } from "../assets";
 import Button from "./Button";
 import Section from "./Section";
 import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
@@ -44,7 +44,7 @@ const Hero = () => {
           </Button> */}
 
           <Generating className="relative left-4 right-4 bottom-5 mt-2 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2
-          flex items-center justify-center h-11 transition-colors hover:text-color-1" />
+          flex items-center justify-center h-11 transition-colors text-white" />
 
         </div>
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
@@ -62,7 +62,7 @@ const Hero = () => {
                   alt="AI"
                 />
 
-                <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
+                {/* <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
 
                 <ScrollParallax isAbsolutelyPositioned>
                   <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
@@ -79,7 +79,7 @@ const Hero = () => {
                     className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[18rem] xl:flex"
                     title="Code generation"
                   />
-                </ScrollParallax>
+                </ScrollParallax> */}
               </div>
             </div>
 
