@@ -23,9 +23,9 @@ const Benefits = () => {
               }}
               key={item.id}
             >
-              <div className="relative z-2 flex flex-col min-h-[8.5rem] p-[1.5rem] pointer-events-none">
+              {/* <div className="relative z-2 flex flex-col min-h-[8.5rem] p-[1.5rem] pointer-events-none">
                 <h5 className="mb-5">{item.title}</h5>
-                {/* <p className="body-2 mb-6 text-n-3">{item.text}</p> */}
+                <p className="body-2 mb-6 text-n-3">{item.text}</p>
                 <div className="flex items-center mt-1">
                   <img
                     src={item.iconUrl}
@@ -36,8 +36,28 @@ const Benefits = () => {
                   <p className="ml-auto pl-3 font-code text-[0.75rem] font-bold text-n-1 uppercase tracking-wider">
                     Explore more
                   </p>
+                  <Arrow className="p-0" />
+                </div>
+              </div> */}
+
+              <div className="relative z-2 flex flex-col min-h-[8.5rem] p-[1.5rem] pointer-events-none">
+              <div className="flex items-center mt-1">
+                  <img
+                    src={item.iconUrl}
+                    width={36}
+                    height={36}
+                    alt={item.title}
+                  />
+                  <h5 className="ml-auto pl-3">
+                    {item.title}
+                  </h5>
                   {/* <Arrow className="p-0" /> */}
                 </div>
+                
+                <p className="body-2 mb-6 text-n-3">{item.text}</p>
+                <p className="mt-5 m-auto font-code text-[0.75rem] font-bold text-n-1 uppercase tracking-wider">
+                    Explore more
+                </p>
               </div>
 
               {item.light && <GradientLight />}
