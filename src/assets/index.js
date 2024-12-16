@@ -26,6 +26,7 @@ import curve from "./hero/curve.png";
 import robot from "./hero/robot.jpg";
 import heroBackground from "./hero/hero-background.jpg";
 import owl from "./hero/owl.jfif";
+import loginUi from "./hero/LoginUi.png";
 
 import curve1 from "./collaboration/curve-1.svg";
 import curve2 from "./collaboration/curve-2.svg";
@@ -79,6 +80,7 @@ import benefitSoundIcon from "./benefits/sound_icon.png";
 import benefitVideoLessonIcon from "./benefits/video-lesson_icon.png";
 import benefitVoiceSearchIcon from "./benefits/voice-search_icon.png";
 import benefitCamerIcon from "./benefits/camera_icon.png"
+import benefitCinemaIcon from "./benefits/cinema_icon.png"
 
 import discordBlack from "./socials/discord.svg";
 import facebook from "./socials/facebook.svg";
@@ -161,6 +163,8 @@ export {
   benefitVideoLessonIcon,
   benefitVoiceSearchIcon,
   benefitCamerIcon,
+  benefitCinemaIcon,
+  loginUi,
   discordBlack,
   facebook,
   instagram,

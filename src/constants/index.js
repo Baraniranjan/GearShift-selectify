@@ -12,6 +12,7 @@ import {
   benefitVideoLessonIcon,
   benefitVoiceSearchIcon,
   benefitCamerIcon,
+  benefitCinemaIcon,
   chromecast,
   disc02,
   discord,
@@ -47,18 +48,18 @@ import {
 export const navigation = [
   {
     id: "0",
-    title: "Features",
-    url: "#features",
+    title: "Find Jobs",
+    url: "#Findjobs",
   },
   {
     id: "1",
-    title: "Pricing",
-    url: "#pricing",
+    title: "Find Talent",
+    url: "#Findtalent",
   },
   {
     id: "2",
-    title: "How to use",
-    url: "#how-to-use",
+    title: "Post a Job",
+    url: "#post-a-job",
   },
   {
     id: "3",
@@ -252,7 +253,7 @@ export const pricing = [
 export const benefits = [
   {
     id: "0",
-    title: "Leanne Graham",
+    title: "Actor",
     text: "",
     backgroundUrl: "./src/assets/benefits/card-3.svg",
     iconUrl: benefitActorIcon,
@@ -280,7 +281,7 @@ export const benefits = [
     title: "Writer",
     text: "",
     backgroundUrl: "./src/assets/benefits/card-3.svg",
-    iconUrl: benefitIcon5,
+    iconUrl: benefitCinemaIcon,
     //imageUrl: benefitImage2,
     //light: true,
   },
@@ -298,6 +299,14 @@ export const benefits = [
     text: "",
     backgroundUrl: "./src/assets/benefits/card-3.svg",
     iconUrl: benefitMicrophoneIcon,
+    //imageUrl: benefitImage2,
+  },
+  {
+    id: "6",
+    title: "Voice",
+    text: "",
+    backgroundUrl: "./src/assets/benefits/card-3.svg",
+    iconUrl: benefitVoiceSearchIcon,
     //imageUrl: benefitImage2,
   },
 ];

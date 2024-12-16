@@ -1,6 +1,7 @@
 import {Header, Section, Footer} from './index';
 import { useLocation, useParams } from 'react-router-dom';
 import React, { useState,useEffect } from 'react';
+import Dropdown from './Dropdown'
  
 // const customers = [
 //  {
@@ -40,26 +41,7 @@ import React, { useState,useEffect } from 'react';
 //  },
 // ];
  
-// const posts = [
-//    {
-//      title: "Singer",
-//      description: "Description of your post/article, Description of your post/article.",
-//      imageUrl: "https://via.placeholder.com/150",
-//      link: "https://amitpachange.com"
-//    },
-//    {
-//      title: "actor",
-//      description: "Another description of your post/article.",
-//      imageUrl: "https://via.placeholder.com/150",
-//      link: "https://example.com"
-//    },
-//    {
-//      title: "Dancer",
-//      description: "Yet another description of your post/article.",
-//      imageUrl: "https://via.placeholder.com/150",
-//      link: "https://example.org"
-//    },
-//  ];
+
  
 function Category(item) {
     
@@ -68,83 +50,208 @@ function Category(item) {
  
    const url = "https://jsonplaceholder.typicode.com/users";
    const [userData, setUserData] = useState([]);
+   const [filteredItems, setFilteredItems] = useState([]);
+   const [selectedFilters, setSelectedFilters] = useState({
+    gender: '',
+    age: '',
+    genres: ''
+  });
+  const filterData = [
+    {
+      label: 'Gender',
+      options: ['Male', 'Female'],
+      name: 'gender'
+    },
+    {
+      label: 'Years of Exp',
+      options: ['10', '20', '30'],
+      name: 'years'
+    },
+    {
+      label: 'Genre',
+      options: ['Thriller', 'Suspense', 'Sci fiction', 'Romance', 'Rom-Com', 'Comedy'],
+      name: 'genre'
+    },
+  ];
+
+
  
- 
-  const fetchUsers = () => {
-    fetch(url)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return res.json();
-      })
-      .then((d) => setUserData(d))
-      .catch((error) => {
-        console.error('There was a problem with the fetch operation:', error);
-      });
-  };
+//   const fetchUsers = () => {
+//     fetch(url)
+//       .then((res) => {
+//         if (!res.ok) {
+//           throw new Error('Network response was not ok');
+//         }
+//         return res.json();
+//       })
+//       .then((d) => setUserData(d))
+//       .catch((error) => {
+//         console.error('There was a problem with the fetch operation:', error);
+//       });
+//   };
   console.log('fetched users- ',userData);
  
   useEffect(() => {
-    fetchUsers();
+    const posts = [
+        {
+          title: "Singer",
+          description: "Description of your post/article, Description of your post/article.",
+          imageUrl: "https://via.placeholder.com/150",
+          link: "https://amitpachange.com",
+          age: 24,
+          gender:"male",
+          genres:"thriller"
+        },
+        {
+          title: "Singer",
+          description: "Another description of your post/article.",
+          imageUrl: "https://via.placeholder.com/150",
+          link: "https://example.com",
+          age:24,
+          gender:"female",
+          genres:"thriller"
+        },
+        {
+          title: "Singer",
+          description: "Yet another description of your post/article.",
+          imageUrl: "https://via.placeholder.com/150",
+          link: "https://example.org",
+          age:25,
+          gender:"male",
+          genres:"thriller"
+        },
+      ];
+      setUserData(posts);
+      setFilteredItems(posts);  
   }, []);
  
+  const applyFilters = () => {
+    let filteredData = [...userData];
+    if (selectedFilters.gender) {
+        filteredData = filteredData.filter(item => item.category === selectedFilters.category);
+      }
+    
+      if (selectedFilters.genres) {
+        filteredData = filteredData.filter(item => item.genres === selectedFilters.genres);
+      }
+
+      if (selectedFilters.age) {
+        filteredData = filteredData.filter(item => item.age === selectedFilters.age);
+      }
+      setFilteredItems(filteredData);  
+  }
+//   const filteredProducts = products.filter((product) => {
+//     // Filter by gender
+//     if (selectedFilters.gender && product.gender !== selectedFilters.gender.toLowerCase()) {
+//         return false;
+//     }
+
+//     // Filter by years of experience (you can match against the age or add a custom years field)
+//     if (selectedFilters.years && parseInt(selectedFilters.years) !== product.age) {
+//         return false;
+//     }
+
+//     // Filter by genre
+//     if (selectedFilters.genre && product.genre && product.genre.toLowerCase() !== selectedFilters.genre.toLowerCase()) {
+//         return false;
+//     }
+
+//     return true;
+// });
+
+const handleSelect = (filterName, value) => {
+    setSelectedFilters(prevFilters => {
+      const newFilters = { ...prevFilters, [filterName]: value };
+      applyFilters(newFilters);  // Re-apply filters whenever any change happens
+      return newFilters;
+    });
+  };
+
+  const resetFilters = () => {
+    setSelectedFilters({
+      gender: '',
+      years: '',
+      genre: ''
+    });
+    setFilteredProducts(posts); // Reset filtered products to the initial ones
+  };
+
 const location = useLocation();  // Access the location object (state)
 const { title } = useParams();  // Access the route parameter (e.g., 'Singer')
  
 // Fetch the users data by matching the item title passed via route
-const users = userData.filter(post => post.name === title);
-console.log('users --', users)
+//const users = userData.filter(post => post.title === title);
+//console.log('users --', users)
  
  
    
 return (
     <>
     <Header/>
-   <Section className="">
-       
-    <div className="max-w-2xl mx-auto mt-24">
-     {users.map((user, index) => (
-       <div
-         key={index}
-         className="flex gap-3 bg-white border border-gray-300 rounded-xl overflow-hidden items-center justify-start mb-4"
-       >
-         <div className="relative w-32 h-32 flex-shrink-0">
-           <img
-             className="absolute left-0 top-0 w-full h-full object-cover object-center transition duration-50"
-             loading="lazy"
-             //src={user.imageUrl}
-             alt={`Image for ${user.name}`}
-           />
-         </div>
- 
-         <div className="flex flex-col gap-2 py-2">
-           <p className="text-xl font-bold text-black">{user.name}</p>
-           <p className="text-black">{user.username}</p>
-           <p className="text-black">{user.company.catchPhrase}</p>
-           {/* <span className="flex items-center justify-start text-gray-500">
-             <svg
-               className="w-4 h-4 mr-1 mt-1"
-               fill="currentColor"
-               viewBox="0 0 20 20"
-               xmlns="http://www.w3.org/2000/svg"
-             >
-               <path
-                 fillRule="evenodd"
-                 d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z"
-                 clipRule="evenodd"
-               ></path>
-             </svg>
-           </span> */}
-             {/* <a href={user.website} target="_blank" rel="noopener noreferrer">
-               {new URL(user.website).hostname}
-             </a> */}
-         </div>
-       </div>
-     ))}
-   </div>
- 
-   </Section>
+    <Section>
+      <div className="container relative z-2 min-h-screen flex justify-center flex-col gap-4">
+        {/* Left side - Filters */}
+        <div className="w-full lg:w-1/4 p-4 ml-4">
+          <div className="flex  gap-4">
+            {filterData.map((filter, index) => (
+              <Dropdown
+                key={index}
+                label={filter.label}
+                options={filter.options}
+                onSelect={(selectedOption) =>
+                  handleSelect(filter.name, selectedOption)
+                }
+                className="w-full max-w-xs"
+              />
+            ))}
+          </div>
+
+          {/* Displaying selected filters */}
+          <div className="mt-4 text-sm text-gray-600 mb-4">
+            <p><strong>Selected Filters:</strong></p>
+            <p>{selectedFilters.gender || ''}</p>
+            <p>{selectedFilters.age || ''}</p>
+            <p>{selectedFilters.genres || ''}</p>
+          </div>
+
+          {/* Reset Filters Button */}
+          <div className="flex justify-center mt-4">
+            <button
+              onClick={resetFilters}
+              className="bg-blue-500 text-white p-2 rounded-md"
+            >
+              Reset Filters
+            </button>
+          </div>
+        </div>
+
+        {/* Right side - Search Results / Filtered Products */}
+        <div className="flex-1 p-4">
+          <div className="w-full max-w-lg mx-auto">
+            <center>
+              <h1 className="flex justify-center">Search Results</h1>
+            </center>
+
+            {/* Display Filtered Products */}
+            <div className="search-results mt-6">
+              {filteredItems.length > 0 ? (
+                filteredItems.map((product) => (
+                  <div key={product.id} className="flex flex-col bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white p-6 mb-4 rounded-lg">
+                    <h5 className="mb-2 text-xl font-medium text-black">{product.name}</h5>
+                    <p className="mb-4 text-base text-black">Category: {product.category}</p>
+                    <p className="text-xs text-surface/75 dark:text-neutral-300">
+                      Age: {product.age} - Genre: {product.genre || 'N/A'}
+                    </p>
+                  </div>
+                ))
+              ) : (
+                <p>No products found matching the selected filters.</p>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </Section>
    <Footer/>
    </>
 );

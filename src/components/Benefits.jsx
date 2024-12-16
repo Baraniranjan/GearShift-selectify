@@ -62,7 +62,7 @@ const Benefits = () => {
                     height={36}
                     alt={item.title}
                   />
-                  <h5 className="ml-auto pl-3">
+                  <h5 className="ml-auto pl-3 font-bangers text-lg/3">
                     {item.title}
                   </h5>
                   {/* <Arrow className="p-0" /> */}
@@ -82,6 +82,11 @@ const Benefits = () => {
             </div>
           ))}
         </div>
+      </div>
+      <div>
+        <h5 className="hidden relative z-10 mt-20 lg:block tagline mb-6 text-center text-n-1/50">
+          Helping people create better tomorrow.
+        </h5>
       </div>
     </Section>
   );

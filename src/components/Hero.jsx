@@ -98,7 +98,10 @@ const Hero = () => {
           {/* <BackgroundCircles /> */}
         </div>
 
-        <CompanyLogos className="hidden relative z-10 mt-20 lg:block" />
+        {/* <h5 className="hidden relative z-10 mt-20 lg:block tagline mb-6 text-center text-n-1/50">
+          Helping people create better tomorrow.
+        </h5> */}
+        {/* <CompanyLogos className="hidden relative z-10 mt-20 lg:block" /> */}
       </div>
 
       {/* <BottomLine /> */}

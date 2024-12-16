@@ -77,16 +77,18 @@ const removeFile = (i) => {
 
     <div className="max-w-sm rounded overflow-hidden shadow-lg">
   <div className="px-6 py-4">
-    <div className="body-2 font-bold text-xl mb-2 text-center">Upload Profiles</div>
+    <div className="container relative z-2 body-2 font-bold text-xl mb-5 text-center">Upload Profiles</div>
     <input 
         type="file" 
         accept="application/pdf,.doc,.docx,.txt" 
         onChange={(e) => addFile(e)}
         multiple
       />
-      <p>Selected file: {fileName}</p>
+      <div className='flex flex-wrap'>
+        <p className='mt-5 mb-3'>Selected file: {fileName}</p>
+      </div>
       {userFiles.length > 0 && (
-    <ul>
+    <ul className='mt-1 mb-1'>
       {userFiles.map((userFile, index) => {
         return (
           <li key={index} className="flex justify-between items-center">
@@ -113,7 +115,7 @@ const removeFile = (i) => {
       Cancel
       </button> */}
       <Button
-       className="float-left"
+       className="float-left mb-5"
        white onClick={handleCancel}>
         Cancel
       </Button>
@@ -122,7 +124,7 @@ const removeFile = (i) => {
       Upload
       </button> */}
       <Button 
-      className="float-right"
+      className="float-right mb-5"
       white onClick={handleUpload}>
         Upload
       </Button>
