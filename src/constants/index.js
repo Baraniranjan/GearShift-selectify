@@ -252,7 +252,7 @@ export const pricing = [
 export const benefits = [
   {
     id: "0",
-    title: "Actors",
+    title: "Leanne Graham",
     text: "",
     backgroundUrl: "./src/assets/benefits/card-3.svg",
     iconUrl: benefitActorIcon,

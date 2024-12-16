@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react';
-import Section from '../Section';
+import {Section,Header,Footer} from '../index';
+
 
 function UploadResume() {
   // State to store the selected file
@@ -67,8 +68,10 @@ const removeFile = (i) => {
 };
 
   return (
+    <div ClassName="flex flex-col min-h-screen">
+    <Header />
     <Section>
-    <div className="w-full flex flex-wrap flex-grow justify-center items-center bg-white py-8">
+    <div className="w-full h-screen flex flex-grow items-center justify-center">
 
     <div className="max-w-sm rounded overflow-hidden shadow-lg">
   <div className="px-6 py-4">
@@ -120,6 +123,9 @@ const removeFile = (i) => {
     
     
     </Section>
+    <Footer />
+    </div>
+  
   );
 };
 

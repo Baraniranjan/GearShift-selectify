@@ -4,8 +4,21 @@ import Section from "./Section";
 import Arrow from "../assets/svg/Arrow";
 import { GradientLight } from "./design/Benefits";
 import ClipPath from "../assets/svg/ClipPath";
+import { useNavigate } from 'react-router-dom';
 
 const Benefits = () => {
+
+  const navigate = useNavigate();
+
+  const handleClick = (item) => {
+    console.log('item --',item)
+   // CardWithList
+   navigate(`/${item.title}`, {
+    state: {
+      item: item.title  // Passing the whole item object as state
+    }
+  });
+  };
   return (
     <Section id="features">
       <div className="container relative z-2">
@@ -17,11 +30,12 @@ const Benefits = () => {
         <div className="flex flex-wrap gap-5 mb-5">
           {benefits.map((item) => (
             <div
-              className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[18rem]"
+              className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[18rem] cursor-pointer"
               style={{
                 backgroundImage: `url(${item.backgroundUrl})`,
               }}
               key={item.id}
+              onClick={() => handleClick(item)}
             >
               {/* <div className="relative z-2 flex flex-col min-h-[8.5rem] p-[1.5rem] pointer-events-none">
                 <h5 className="mb-5">{item.title}</h5>
@@ -62,22 +76,7 @@ const Benefits = () => {
 
               {item.light && <GradientLight />}
 
-              <div
-                className="absolute inset-0.5 bg-n-8"
-                style={{ clipPath: "url(#benefits)" }}
-              >
-                <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
-                  {item.imageUrl && (
-                    <img
-                      src={item.imageUrl}
-                      width={380}
-                      height={362}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                    />
-                  )}
-                </div>
-              </div>
+             
 
               <ClipPath />
             </div>
