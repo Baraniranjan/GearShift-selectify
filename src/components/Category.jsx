@@ -1,180 +1,108 @@
-
-import {Section} from './index';
+import {Header, Section, Footer} from './index';
 import { useLocation, useParams } from 'react-router-dom';
 import React, { useState,useEffect } from 'react';
-
-const customers = [
- {
-   name: "Tania Andrew",
-   email: "tania@gmail.com",
-   price: 400,
-   image:
-     "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg",
- },
- {
-   name: "John Micheal",
-   email: "john@gmail.com",
-   price: 420,
-   image:
-     "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-6.jpg",
- },
- {
-   name: "Alexa Liras",
-   email: "alexa@gmail.com",
-   price: 340,
-   image:
-     "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg",
- },
- {
-   name: "Richard Gran",
-   email: "richard@gmail.com",
-   price: 520,
-   image:
-     "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg",
- },
- {
-   name: "Micheal Levi",
-   email: "levi@gmail.com",
-   price: 780,
-   image:
-     "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-4.jpg",
- },
-];
-
-const posts = [
-   {
-     title: "Singer",
-     description: "Description of your post/article, Description of your post/article.",
-     imageUrl: "https://via.placeholder.com/150",
-     link: "https://amitpachange.com"
-   },
-   {
-     title: "actor",
-     description: "Another description of your post/article.",
-     imageUrl: "https://via.placeholder.com/150",
-     link: "https://example.com"
-   },
-   {
-     title: "Dancer",
-     description: "Yet another description of your post/article.",
-     imageUrl: "https://via.placeholder.com/150",
-     link: "https://example.org"
-   },
- ];
-
+ 
+// const customers = [
+//  {
+//    name: "Tania Andrew",
+//    email: "tania@gmail.com",
+//    price: 400,
+//    image:
+//      "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg",
+//  },
+//  {
+//    name: "John Micheal",
+//    email: "john@gmail.com",
+//    price: 420,
+//    image:
+//      "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-6.jpg",
+//  },
+//  {
+//    name: "Alexa Liras",
+//    email: "alexa@gmail.com",
+//    price: 340,
+//    image:
+//      "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg",
+//  },
+//  {
+//    name: "Richard Gran",
+//    email: "richard@gmail.com",
+//    price: 520,
+//    image:
+//      "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg",
+//  },
+//  {
+//    name: "Micheal Levi",
+//    email: "levi@gmail.com",
+//    price: 780,
+//    image:
+//      "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-4.jpg",
+//  },
+// ];
+ 
+// const posts = [
+//    {
+//      title: "Singer",
+//      description: "Description of your post/article, Description of your post/article.",
+//      imageUrl: "https://via.placeholder.com/150",
+//      link: "https://amitpachange.com"
+//    },
+//    {
+//      title: "actor",
+//      description: "Another description of your post/article.",
+//      imageUrl: "https://via.placeholder.com/150",
+//      link: "https://example.com"
+//    },
+//    {
+//      title: "Dancer",
+//      description: "Yet another description of your post/article.",
+//      imageUrl: "https://via.placeholder.com/150",
+//      link: "https://example.org"
+//    },
+//  ];
+ 
 function Category(item) {
     
    console.log('item ---',item)
-   const location = useLocation();  // Access the location object (state)
- const { title } = useParams(); 
-
+ 
+ 
    const url = "https://jsonplaceholder.typicode.com/users";
    const [userData, setUserData] = useState([]);
-   const [loading, setLoading] = useState(true);
-   const [error, setError] = useState(null);
-
-   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch(url);
-        if (!response.ok) {
+ 
+ 
+  const fetchUsers = () => {
+    fetch(url)
+      .then((res) => {
+        if (!res.ok) {
           throw new Error('Network response was not ok');
         }
-        const data = await response.json();
-        // Filter data based on the title passed via the route
-        const filteredData = data.filter((post) => post.title.includes(title)); // Example filtering by title
-        setUserData(filteredData);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [title]);
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    return <p style={{ color: 'red' }}>Error: {error}</p>;
-  }
-
+        return res.json();
+      })
+      .then((d) => setUserData(d))
+      .catch((error) => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
+  };
+  console.log('fetched users- ',userData);
  
-//    const fetchUsers = () => {
-//      fetch(url)
-//        .then((res) => {
-//          if (!res.ok) {
-//            throw new Error('Network response was not ok');
-//          }
-//          return res.json();
-//        })
-//        .then((d) => setUserData(d))
-//        .catch((error) => {
-//          console.error('There was a problem with the fetch operation:', error);
-//        });
-//    };
-   console.log('fetched users- ',userData);
+  useEffect(() => {
+    fetchUsers();
+  }, []);
  
-   useEffect(() => {
-     fetchUsers();
-   }, []);
-
- // Access the route parameter (e.g., 'Singer')
-
- // Fetch the users data by matching the item title passed via route
- const users = userData.filter(post => post.title === title);  // Find the post by title
+const location = useLocation();  // Access the location object (state)
+const { title } = useParams();  // Access the route parameter (e.g., 'Singer')
  
-//   if (!users.length) {
-//     return <div>Item not found!</div>;  // Handle the case if no post is found
-//   }
+// Fetch the users data by matching the item title passed via route
+const users = userData.filter(post => post.name === title);
+console.log('users --', users)
+ 
+ 
    
- return (
+return (
+    <>
+    <Header/>
    <Section className="">
-        {/* <Card className="flex flex-col">
-     <CardBody>
-       <div className="mb-4 flex items-center justify-between">
-         <Typography variant="h5" color="blue-gray" className="">
-           Latest Customers
-         </Typography>
-         <Typography
-           as="a"
-           href="#"
-           variant="small"
-           color="blue"
-           className="font-bold"
-         >
-           View all
-         </Typography>
-       </div>
-       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-         {customers.map(({ name, email, price, image }, index) => (
-           <div
-             key={index}
-             className="flex items-center justify-between pb-3 pt-3 last:pb-0"
-           >
-             <div className="flex items-center gap-x-3">
-               <Avatar size="sm" src={image} alt={name} />
-               <div>
-                 <Typography color="blue-gray" variant="h6">
-                   {name}
-                 </Typography>
-                 <Typography variant="small" color="gray">
-                   {email}
-                 </Typography>
-               </div>
-             </div>
-             <Typography color="blue-gray" variant="h6">
-               ${price}
-             </Typography>
-           </div>
-         ))}
-       </div>
-     </CardBody>
-   </Card> */}
+       
     <div className="max-w-2xl mx-auto mt-24">
      {users.map((user, index) => (
        <div
@@ -185,15 +113,16 @@ function Category(item) {
            <img
              className="absolute left-0 top-0 w-full h-full object-cover object-center transition duration-50"
              loading="lazy"
-             src={user.imageUrl}
-             alt={`Image for ${user.title}`}
+             //src={user.imageUrl}
+             alt={`Image for ${user.name}`}
            />
          </div>
-
+ 
          <div className="flex flex-col gap-2 py-2">
-           <p className="text-xl font-bold">{user.title}</p>
-           <p className="text-gray-500">{user.description}</p>
-           <span className="flex items-center justify-start text-gray-500">
+           <p className="text-xl font-bold text-black">{user.name}</p>
+           <p className="text-black">{user.username}</p>
+           <p className="text-black">{user.company.catchPhrase}</p>
+           {/* <span className="flex items-center justify-start text-gray-500">
              <svg
                className="w-4 h-4 mr-1 mt-1"
                fill="currentColor"
@@ -206,17 +135,18 @@ function Category(item) {
                  clipRule="evenodd"
                ></path>
              </svg>
-             <a href={user.link} target="_blank" rel="noopener noreferrer">
-               {new URL(user.link).hostname}
-             </a>
-           </span>
+           </span> */}
+             {/* <a href={user.website} target="_blank" rel="noopener noreferrer">
+               {new URL(user.website).hostname}
+             </a> */}
          </div>
        </div>
      ))}
    </div>
-
+ 
    </Section>
-  
- );
+   <Footer/>
+   </>
+);
 }
 export default Category

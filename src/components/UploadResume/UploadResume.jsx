@@ -1,5 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import {Section,Header,Footer} from '../index';
+import { Link } from "react-router-dom"
+import Button from "../Button";
 
 
 function UploadResume() {
@@ -75,10 +77,10 @@ const removeFile = (i) => {
 
     <div className="max-w-sm rounded overflow-hidden shadow-lg">
   <div className="px-6 py-4">
-    <div className="font-bold text-xl mb-2 text-center">Upload Resumes</div>
+    <div className="body-2 font-bold text-xl mb-2 text-center">Upload Profiles</div>
     <input 
         type="file" 
-        accept="application/pdf,.doc,.docx" 
+        accept="application/pdf,.doc,.docx,.txt" 
         onChange={(e) => addFile(e)}
         multiple
       />
@@ -107,21 +109,37 @@ const removeFile = (i) => {
 
 
   <div className="flow-root">
-  <button className="bg-white float-left hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow ml-5 mb-2" onClick={handleCancel}>
+  {/* <button className="bg-white float-left hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow ml-5 mb-2" onClick={handleCancel}>
       Cancel
-      </button>
+      </button> */}
+      <Button
+       className="float-left"
+       white onClick={handleCancel}>
+        Cancel
+      </Button>
       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-      <button className="bg-white float-right hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded mr-5 mb-2 shadow" onClick={handleUpload}>
+      {/* <button className="bg-white float-right hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded mr-5 mb-2 shadow" onClick={handleUpload}>
       Upload
-      </button>
+      </button> */}
+      <Button 
+      className="float-right"
+      white onClick={handleUpload}>
+        Upload
+      </Button>
 
   </div>
-  
+  <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
+          <Link to="/home">
+            <Button white>
+                Back to Home
+            </Button>
+          </Link>
+        </div>
 </div>
 
     </div>
-    
-    
+
+        
     </Section>
     <Footer />
     </div>
