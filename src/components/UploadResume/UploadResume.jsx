@@ -79,6 +79,7 @@ const removeFile = (i) => {
   <div className="px-6 py-4">
     <div className="container relative z-2 body-2 font-bold text-xl mb-5 text-center">Upload Profiles</div>
     <input 
+        className="bg-transparent text-transparent"
         type="file" 
         accept="application/pdf,.doc,.docx,.txt" 
         onChange={(e) => addFile(e)}
