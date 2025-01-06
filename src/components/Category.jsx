@@ -1,9 +1,11 @@
-import { useState,useEffect,useLocation } from 'react';
+ 
+import { useState,useEffect } from 'react';
 import Section from './Section';
 import Dropdown from './Dropdown';
 import Header from './Header';
+import { useLocation } from'react-router-dom';
+import { useParams } from 'react-router-dom';
 //import { navigation } from '';
-
 const posts = [
  {
    title: "Singer",
@@ -41,6 +43,22 @@ function Category(item) {
        age: 0,
        genres: ''
    });
+   const [query, setQuery] = useState("");
+   const location = useLocation();
+//    const { query } = useParams();
+//    console.log('q',query);
+   useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    console.log('loc',location.search)
+    console.log('params ' ,urlParams)
+    const queryParam = urlParams.get("q") || "";
+    console.log('search param - ',queryParam)
+    setQuery(queryParam);
+}, [location.search]); 
+// useEffect(()=>{
+//     let fetchedData = userData.filter(user => user.title.includes(query))
+//     setFilteredData(fetchedData);
+// },[userData,query]);
     
    const filterData = [
        {
@@ -50,12 +68,12 @@ function Category(item) {
        },
        {
          label: 'Age',
-         options: ['25', '24', '30'],
+         options: ['20-30', '30-40', 'above 40'],
          name: 'years'
        },
        {
          label: 'Genres',
-         options: ['Thriller', 'Suspense', 'Sci fiction', 'Romance', 'Rom-Com', 'Comedy'],
+         options: ['Action', 'Action/Drama', 'Dance', 'Musical', 'Sci fiction', 'Romance', 'Rom-Com', 'Comedy', 'Drama','Political Thriller'],
          name: 'genres'
        },
      ];
@@ -89,31 +107,43 @@ function Category(item) {
     // };
       
     //  },[]);
+//     useEffect(() => {
+//         fetch("http://localhost:5432/profiles")
+//         .then((res) => res.json())
+//         .then((data) => {
+//             setUserData(data);
+//             //setFilteredData(data)
+//         console.log('fdata', data);
+    
+//     });
+//   }, []);
 
-     const [query, setQuery] = useState("");
-    //const location = useLocation();
+
+  useEffect(() => {
+    if (query) {
+        console.log('hi');
+      const fetchData = async () => {
+        try {
+         
+          const response = await fetch(`http://localhost:5432/profiles/${query}`);
+          console.log('res',response);
+          const data = await response.json();
+          console.log('fdata',data);
+          setUserData(data);
+          setFilteredData(data);
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
+      fetchData();
+    }
+  }, [query]); 
     
     
-    // Get the search query from the URL (if it exists)
-    // useEffect(() => {
-    //     const urlParams = new URLSearchParams(location.search);
-    //     console.log('params ' ,urlParams)
-    //     const queryParam = urlParams.get("q") || "";
-    //     // Default to empty string if no query is found
-    //     console.log('search param - ',queryParam)
-    //     setQuery(queryParam);
-    // }, [location.search]); 
+    //Get the search query from the URL (if it exists)
+   
     
-    useEffect(() => {
-        fetch("http://localhost:5432/profiles")
-        .then((res) => res.json())
-        .then((data) => {
-            setUserData(data);
-            setFilteredData(data)
-        console.log('fdata', data);
-    
-    });
-  }, []);
+ 
   
      const handleSelect = (filterName, selectedOption) => {
        setSelectedFilters((prevState) => ({
@@ -138,13 +168,12 @@ function Category(item) {
    // });
    // setFilteredData(filteredProducts);
    useEffect(() => {
-       const filteredProducts = userData.filter((product) => {
+       const filteredProducts = filteredData.filter((product) => {
          // Filter by gender
          const fdata = {r: [product.roles]}
-
          //console.log('f',fdata.r[0]);
          //console.log('roles', product);
-         if (selectedFilters.gender && product.Gender.toLowerCase() !== selectedFilters.gender.toLowerCase()) {
+         if (selectedFilters.gender && product.gender.toLowerCase() !== selectedFilters.gender.toLowerCase()) {
             //console.log(product.Gender)
            return false;
          }
@@ -156,7 +185,7 @@ function Category(item) {
   
          // Filter by genre
          if (selectedFilters.genres && product.genres.toLowerCase() !== selectedFilters.genres.toLowerCase()) {
-           return false;
+           return false;    
          }
   
          return true;
@@ -166,9 +195,9 @@ function Category(item) {
      }, [selectedFilters, userData]);
    const resetFilters = () => {
        setSelectedFilters([])
+       setFilteredData(userData)
      };
  
-
    return (
     <>
     <Header/>
@@ -190,7 +219,7 @@ function Category(item) {
              ))}
            </div>
            {/* Displaying selected filters */}
-           <div className="mt-4 mb-4 text-sm text-gray-600">
+           <div className="mt-4 mb-4 ml-4 text-sm text-white">
              <p><strong>Selected Filters:</strong></p>
              <p>{selectedFilters.gender || ''}</p>
              <p>{selectedFilters.age || ''}</p>
@@ -218,10 +247,14 @@ function Category(item) {
                  filteredData.map((product) => (
                    <div key={product.id} className="flex flex-col bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white p-6 mb-4 rounded-lg">
                      <h5 className="mb-2 text-xl font-medium text-black">{product.name}</h5>
-                     <p className="mb-4 text-base text-black">gender: {product.Gender}</p>
-                     <p className="text-xs text-surface/75 text-black">
-                       Age: {product.Age} - Genre: {product.genres || 'N/A'}
+                     <p className="mb-2 text-base text-black">Email: {product.email}</p>
+                     <p className="mb-2 text-base text-black">Gender: {product.gender}</p>
+                     <p className="mb-2 text-base text-black">
+                       Age: {product.age} <p>
+                        Genre: {product.genres || 'N/A'}</p>
                      </p>
+                     <p className="mb-4 text-base text-black">Ethnicity: {product.ethnicity}</p>
+                     <p className="mb-4 text-base text-black">Skills: {product.skills.join(', ')}</p>
                    </div>
                  ))
                ) : (
@@ -237,3 +270,4 @@ function Category(item) {
   );
 }
 export default Category
+ 

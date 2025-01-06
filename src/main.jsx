@@ -34,7 +34,7 @@ const router = createBrowserRouter(
       element: <SearchPage />
     },
     {
-      path: "/:title",
+      path: "/profiles/:title",
       element:<Category />
     }
   ]

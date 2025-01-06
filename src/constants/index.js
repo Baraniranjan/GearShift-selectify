@@ -63,7 +63,7 @@ export const navigation = [
   },
   {
     id: "3",
-    title: "Upload Resume",
+    title: "Upload Profile",
     url: "/upload-resume",
   },
   {
@@ -261,7 +261,7 @@ export const benefits = [
   },
   {
     id: "1",
-    title: "Directors",
+    title: "Director",
     text: "",
     backgroundUrl: "./src/assets/benefits/card-3.svg",
     iconUrl: benefitDirectorIcon,

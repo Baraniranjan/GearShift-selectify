@@ -17,25 +17,38 @@ function UploadResume() {
 
   
 
-  // Handle file upload (example)
   let handleUpload = (e) => {
-    if (file) {
-      const formData = new FormData(); // ideal for files upload
-      // to construct payload , file is uploaded with unique key in formdata obj
-
-      userFiles.forEach((fileName,index)=> {
-        const file = document.querySelector(`input[type="file"]`).fileName[index]; // Grab file object by index
-        formData.append('files', file);
-
-      })
-      
-
-      // Send the file to a server with fetch
-      fetch('/upload', {
+    // if (userFiles && userFiles.length > 0) {
+      // const formData = new FormData();
+  
+      const fileInput = document.querySelector('#fileInput');
+ 
+      if (fileInput && fileInput.files.length > 0) {
+          const formData = new FormData(); 
+          for (let i = 0; i < fileInput.files.length; i++) {
+          const file = fileInput.files[i]; 
+          formData.append('files[]', file); 
+        }
+  
+      // Debug: Check FormData contents
+      for (let [key, value] of formData.entries()) {
+        console.log(key, value); // Should log 'files' and the File object
+      }
+  
+      fetch('http://localhost:5432/upload', {
         method: 'POST',
         body: formData,
       })
-        .then((response) => response.json())
+        .then((response) => {
+          if (response.ok && response.headers.get('content-type')?.includes('application/json')) {
+            return response.json();
+          } else {
+            return response.text().then((text) => {
+              console.error('Non-JSON response:', text);
+              throw new Error('Server did not return a JSON response');
+            });
+          }
+        })
         .then((data) => {
           console.log('File uploaded successfully:', data);
         })
@@ -43,10 +56,11 @@ function UploadResume() {
           console.error('Error uploading file:', error);
         });
     } else {
-      setErrorMessage('Please select a file first.');
+      setErrorMessage('Please select at least one file.');
     }
   };
-
+  
+  
   const handleCancel = (e) => {
     setFile(null);
     setFileName(null);
@@ -84,6 +98,7 @@ const removeFile = (i) => {
         accept="application/pdf,.doc,.docx,.txt" 
         onChange={(e) => addFile(e)}
         multiple
+        id = "fileInput"
       />
       <div className='flex flex-wrap'>
         <p className='mt-5 mb-3'>Selected file: {fileName}</p>
