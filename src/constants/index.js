@@ -54,7 +54,7 @@ export const navigation = [
   {
     id: "1",
     title: "Find Talent",
-    url: "#Findtalent",
+    url: "/find-talent",
   },
   {
     id: "2",
@@ -65,6 +65,11 @@ export const navigation = [
     id: "3",
     title: "Upload Profile",
     url: "/upload-resume",
+  },
+  {
+    id: "6",
+    title: "Tools",
+    url: "/tools",
   },
   {
     id: "4",

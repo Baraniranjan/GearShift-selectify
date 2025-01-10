@@ -7,6 +7,8 @@ import SearchPage from './SearchPage.jsx'
 import NotFoundPage from '../pages/NotFoundPage.jsx'
 import Dropdown from "./Dropdown.jsx";
 import Filters from "./Filters.jsx";
+import Filters1 from "./Filters1.jsx";
+import FindTalent from "./FindTalent.jsx";
 
 export {
     Header,
@@ -17,5 +19,7 @@ export {
     SearchPage,
     NotFoundPage,
     Dropdown,
-    Filters
+    Filters,
+    FindTalent,
+    Filters1
 }
