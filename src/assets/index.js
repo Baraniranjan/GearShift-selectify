@@ -1,7 +1,10 @@
 import brainwave from "./brainwave.svg";
 import SelectifyLogo from "./SelectifyLogo.png";
 import SelectifyTabLogo from "./SelectifyTabLogo.png";
+import Selectify0Logo from "./Selectify0Logo.png";
+import SelectifyPlusLogo from "./Selectify+Logo.png";
 import check from "./check.svg";
+import checkYellow from "./checkYellow.svg"
 import brainwaveSymbol from "./brainwave-symbol.svg";
 import brainwaveWhiteSymbol from "./brainwave-symbol-white.svg";
 import play from "./play.svg";
@@ -126,7 +129,10 @@ export {
   brainwave,
   SelectifyLogo,
   SelectifyTabLogo,
+  Selectify0Logo,
+  SelectifyPlusLogo,
   check,
+  checkYellow,
   check2,
   loading1,
   brainwaveSymbol,

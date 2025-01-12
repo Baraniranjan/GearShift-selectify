@@ -6,6 +6,9 @@ import Footer from "./components/Footer";
 import { Outlet } from 'react-router-dom';
 import Collaboration from "./components/Collaboration";
 import { Contact, StarsCanvas } from "./components";
+import Pricing from "./components/Pricing";
+import Roadmap from "./components/Roadmap";
+import Services from "./components/Services";
 
 const App = () => {
   return (
@@ -15,11 +18,9 @@ const App = () => {
         <Outlet />
         <Hero />
         {/* <Benefits /> */}
-        <Collaboration />
-        <div className='relative z-0'>
-          <Contact />
-          <StarsCanvas />
-        </div>
+        <Services />
+        <Pricing />
+        <Roadmap />
         <Footer />
       </div>
 
