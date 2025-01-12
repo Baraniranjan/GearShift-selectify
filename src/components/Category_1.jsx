@@ -68,7 +68,7 @@ function Category(item) {
    const location = useLocation();  // Access the location object (state)
  const { title } = useParams(); 
 
-   const url = "https://jsonplaceholder.typicode.com/users";
+   const url = "http://localhost:5432/profiles";
    //const url = "../src/data.json";
    const [userData, setUserData] = useState([]);
    const [loading, setLoading] = useState(true);

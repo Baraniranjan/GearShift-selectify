@@ -7,6 +7,7 @@ import App from "./App.jsx";
 import Login from "./components/Login.jsx";
 import {SearchPage, UploadResume,Category } from './components/index.js';
 import NotFoundPage from "./pages/NotFoundPage.jsx";
+import { FindTalent, FindJobs } from "./components/index.js";
 
 const router = createBrowserRouter(
   [
@@ -34,9 +35,17 @@ const router = createBrowserRouter(
       element: <SearchPage />
     },
     {
-      path: "/:title",
+      path: "/profiles/:title",
       element:<Category />
-    }
+    },
+    {
+      path: "/find-talent",
+      element: <FindTalent />
+    },
+    {
+      path: "/find-jobs",
+      element: <FindJobs />
+    },
   ]
 )
 

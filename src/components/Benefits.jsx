@@ -13,7 +13,7 @@ const Benefits = () => {
   const handleClick = (item) => {
     console.log('item --',item)
    // CardWithList
-   navigate(`/${item.title}`, {
+   navigate(`/profiles/search?q=${item.title}`, {
     state: {
       item: item.title  // Passing the whole item object as state
     }
