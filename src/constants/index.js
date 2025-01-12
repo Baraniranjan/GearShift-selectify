@@ -72,7 +72,7 @@ export const navigation = [
   {
     id: "0",
     title: "Find Jobs",
-    url: "#Findjobs",
+    url: "/find-jobs",
   },
   {
     id: "1",
