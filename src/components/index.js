@@ -9,6 +9,14 @@ import Dropdown from "./Dropdown.jsx";
 import Filters from "./Filters.jsx";
 import Filters1 from "./Filters1.jsx";
 import FindTalent from "./FindTalent.jsx";
+import { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas } from './canvas';
+import Navbar from "./Navbar";
+import Tech from "./Tech";
+import Experience from "./Experience";
+import Works from "./Works";
+import Feedbacks from "./Feedbacks";
+import Contact from "./Contact";
+import CanvasLoader from "./Loader";
 
 export {
     Header,
@@ -21,5 +29,16 @@ export {
     Dropdown,
     Filters,
     FindTalent,
-    Filters1
+    Filters1,
+    Navbar,
+    Tech,
+    Experience,
+    Works,
+    Feedbacks,
+    Contact,
+    CanvasLoader,
+    EarthCanvas, 
+    BallCanvas, 
+    ComputersCanvas, 
+    StarsCanvas
 }

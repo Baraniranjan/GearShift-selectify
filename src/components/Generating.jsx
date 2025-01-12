@@ -33,15 +33,16 @@ const Generating = ({ className }) => {
         className || ""
       } text-base`}
     >
-      <img className="w-5 h-5 mr-4" src={searchMd} alt="Loading" onClick={() => {
-            handleSubmit(new Event('submit', { cancelable: true }));
-          }}/>
       <input 
         type="search"
         placeholder="Search something..." 
         className="w-full outline-none bg-transparent text-black-600 text-sm" 
         onChange={(event)=> setSearchQuery(event.target.value)}
       />
+      <img className="w-5 h-5 mr-4 cursor-pointer" 
+      src={searchMd} alt="Loading" onClick={() => {
+            handleSubmit(new Event('submit', { cancelable: true }));
+          }}/>
     </div>
     {/* <button type="submit">Search</button> */}
 

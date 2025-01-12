@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Section, Header, Footer } from '../index';
+import { Section, Header, Footer, Contact, StarsCanvas } from '../index';
 import { Link } from "react-router-dom";
-import Button from "../Button";
+import Button from '../Button';
 import { heroBackground } from '../../assets';
+import { LeftCurve, RightCurve } from "../design/Collaboration";
+import { brainwaveSymbol, check, SelectifyTabLogo } from "../../assets";
+import { collabApps, collabContent, collabText } from "../../constants";
+
 
 function UploadResume() {
   // State to store the selected file
@@ -77,20 +81,20 @@ function UploadResume() {
   };
 
   return (
-    <div className="h-screen w-screen">
-      <div
-        className="absolute top-0 left-1/2 w-full h-full -translate-x-1/2"
+    <div className="">
+      {/* <div
+        className="absolute left-1/2 w-full h-full -translate-x-1/2"
         style={{
           background: `url(${heroBackground})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
           zIndex: -1,
         }}
-      ></div>
+      ></div> */}
 
       <div className="flex flex-col min-h-screen">
         <Header />
-        <Section>
+        {/* <Section>
           <div className="w-full h-screen flex flex-grow items-center justify-center">
             <div className="max-w-md w-full bg-black rounded-lg shadow-lg p-10">
               <div className="relative text-center p-4 px-1 py-1 md:px-10">
@@ -152,7 +156,7 @@ function UploadResume() {
                   </Button>
                 </div>
 
-                {/* Error Modal */}
+                Error Modal
                 {errorMessage && (
                   <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
                     <div className="bg-white rounded-lg p-6 text-center">
@@ -177,11 +181,153 @@ function UploadResume() {
               </div>
             </div>
           </div>
+        </Section> */}
+
+        <Section crosses>
+        <div className="container lg:flex">
+          <div className="max-w-[40rem]  flex-col">
+            <h2 className="h2 mb-4 md:mb-8 font-bangers uppercase">
+              Upload Profiles
+            </h2>
+
+            <ul className="max-w-[22rem] mb-3 md:mb-3">
+              {collabContent.map((item) => (
+                <><li className="mb-3 py-3" key={item.id}>
+                  <div className="flex items-center">
+                    <img src={check} width={24} height={24} alt="check" />
+                    <input
+                      className="bg-transparent text-transparent ml-3 font-bangers"
+                      type="file"
+                      accept="application/pdf,.doc,.docx,.txt"
+                      onChange={(e) => addFile(e)}
+                      multiple
+                      id="fileInput" />
+                    {/* <h6 className="body-2 ml-5">{item.title}</h6> */}
+                  </div>
+                  {item.text && (
+                    <p className="body-2 mt-3 text-n-4">{item.text}</p>
+                  )}
+                </li><li>
+                <h4 className="body-1 ml-5 h-11 font-bangers ">Selected files : {fileName}</h4>
+                  </li></>
+              ))}
+            </ul>
+            
+            <div className="max-h-52 overflow-y-auto mb-6">
+            {userFiles.length > 0 && (
+            <ul className='max-w-[22rem] ml-4'>
+              {userFiles.map((userFile, index) => {
+                return (
+                  <li key={index} className="p-1">
+                    <span>{userFile}</span>
+                    <button
+                      type="button"
+                      className="ml-2 text-purple-500 hover:text-red-700"
+                      onClick={() => {
+                        removeFile(index);
+                      }}
+                    >
+                      Remove
+                    </button>
+                  </li>
+                );                  
+              })}
+            </ul>
+            )}
+            </div>
+
+            <div className="flow-root flex-grow">
+              <Button 
+                className="float-left mb-7"
+                onClick={handleUpload}
+              >
+                Upload
+              </Button>
+              
+              <Button
+                className="float-right mb-7"
+                onClick={handleCancel}
+              >
+                Cancel
+              </Button>
+              
+            </div>
+
+            {errorMessage && (
+              <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+                <div className="bg-white rounded-lg p-6 text-center">
+                  <p className="text-red-500 font-bold">{errorMessage}</p>
+                  <Button
+                    className="mt-4"
+                    white onClick={() => setErrorMessage('')}
+                  >
+                    Close
+                  </Button>
+                </div>
+              </div>
+            )}
+
+            <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
+              <Link to="/home">
+                <Button>
+                  Back to Home
+                </Button>
+              </Link>
+            </div>
+          </div>
+
+          <div className="lg:ml-auto xl:w-[38rem] mt-4">
+            <p className="body-2 mb-8 text-n-4 md:mb-16 lg:w-[30rem] lg:mx-auto">
+              {collabText}
+            </p>
+
+            <div className="relative left-1/2 flex w-[22rem] aspect-square border border-n-6 rounded-full -translate-x-1/2 scale:75 md:scale-100">
+              <div className="flex w-60 aspect-square m-auto border border-n-6 rounded-full">
+                <div className="w-[6rem] aspect-square m-auto p-[0.2rem] bg-conic-gradient rounded-full">
+                  <div className="flex items-center justify-center w-full h-full bg-n-8 rounded-full">
+                    <img
+                      src={SelectifyTabLogo}
+                      width={48}
+                      height={48}
+                      alt="SelectifyTabLogo"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <ul>
+                {collabApps.map((app, index) => (
+                  <li
+                    key={app.id}
+                    className={`absolute top-0 left-1/2 h-1/2 -ml-[1.6rem] origin-bottom rotate-${
+                      index * 45
+                    }`}
+                  >
+                    <div
+                      className={`relative -top-[1.6rem] flex w-[3.2rem] h-[3.2rem] bg-n-7 border border-n-1/15 rounded-xl -rotate-${
+                        index * 45
+                      }`}
+                    >
+                      <img
+                        className="m-auto"
+                        width={app.width}
+                        height={app.height}
+                        alt={app.title}
+                        src={app.icon}
+                      />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+
+              <LeftCurve />
+              <RightCurve />
+            </div>
+          </div>
+        </div>
         </Section>
 
-        <Section>
-          
-        </Section>
+
         <Footer />
       </div>
     </div>
