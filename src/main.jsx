@@ -7,9 +7,10 @@ import App from "./App.jsx";
 import Login from "./components/Login.jsx";
 import {SearchPage, UploadResume,Category } from './components/index.js';
 import NotFoundPage from "./pages/NotFoundPage.jsx";
-import { FindTalent, FindJobs } from "./components/index.js";
+import { FindTalent, FindJobs,Summarize,Tools } from "./components/index.js";
 import PostAJob from "./components/PostAJob.jsx";
 import SearchResults from "./components/SearchResults.jsx";
+
 
 const router = createBrowserRouter(
   [
@@ -56,6 +57,19 @@ const router = createBrowserRouter(
       path: "/post-a-job",
       element: <PostAJob />
     },
+    {
+      path:"/tools/summarize",
+      element:<Summarize/>
+    },
+    {
+      path:"/tools",
+      element:<Tools/>
+    },
+    {
+      path:"/find-roles",
+      element:<ToolsData/>
+    }
+ 
   ]
 )
 

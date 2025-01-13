@@ -636,7 +636,7 @@ export const filterData = [
   },
   {
     label: 'Ethnicity',
-    options: ['Asian', 'Black', 'Caucasian', 'Hispanic', 'Other'],
+    options: ['Asian', 'Black', 'Caucasian', 'Hispanic','African', 'Other'],
     name: 'ethnicity',
   },
   {

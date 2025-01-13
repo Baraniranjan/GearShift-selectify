@@ -18,7 +18,8 @@ function SearchResults() {
       const queryParam = urlParams.get("q") || ""; 
       console.log(location.search);
       setSearchQuery(queryParam);
-      const response = await fetch(`http://localhost:5432/find-talent/?${searchQuery.toString()}`);
+      console.log(`http://localhost:5432/search?${searchQuery.toString()}`);
+      const response = await fetch(`http://localhost:5432/search?${searchQuery.toString()}`);
       const data = await response.json();
       setSearchResponse(data);
       setPreSelectedFilters(data.filters || []);

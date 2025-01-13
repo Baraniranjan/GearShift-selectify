@@ -1,7 +1,7 @@
 import { Dropdown } from "./index"
 import { useState,useEffect } from "react";
 
-function PreFilterDropdown({ filterData, preSelectedFilters, searchResponse,setSearchResponse }) {
+function PreFilterDropdown({ filterData, searchResponse }) {
   // Filter preselected and remaining filters
   // const preSelectedItems = filterData.filter((filter) =>{
   //   preSelectedFilters.includes(filter.name)

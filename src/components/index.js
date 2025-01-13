@@ -19,10 +19,13 @@ import Feedbacks from "./Feedbacks";
 import Contact from "./Contact";
 import CanvasLoader from "./Loader";
 import PreFilterDropdown from "./PreFilterDropdown.jsx";
+import Summarize from "./Summarize.jsx";
+import Tools from "./Tools.jsx";
 
 export {
     Header,
     Footer,
+    Summarize,
     UploadResume,
     Category,
     Section,
@@ -45,4 +48,5 @@ export {
     ComputersCanvas, 
     StarsCanvas,
     PreFilterDropdown,
+    Tools
 }
