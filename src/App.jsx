@@ -4,6 +4,11 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import { Outlet } from 'react-router-dom';
+import Collaboration from "./components/Collaboration";
+import { Contact, StarsCanvas } from "./components";
+import Pricing from "./components/Pricing";
+import Roadmap from "./components/Roadmap";
+import Services from "./components/Services";
 
 const App = () => {
   return (
@@ -12,7 +17,10 @@ const App = () => {
         <Header />
         <Outlet />
         <Hero />
-        <Benefits />
+        {/* <Benefits /> */}
+        <Services />
+        <Pricing />
+        <Roadmap />
         <Footer />
       </div>
 

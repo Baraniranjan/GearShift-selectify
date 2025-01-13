@@ -36,15 +36,14 @@ const Hero = () => {
             </span>
           </h1>
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-14">
-            Unleash the power of AI within Selectify. Upgrade your productivity
-            with Selectify.
+            Upgrade your productivity & Unleash the power of AI with Selectify.
           </p>
           {/* <Button href="/pricing" white>
             Get started
           </Button> */}
 
-          <Generating className="relative left-4 right-4 bottom-5 mt-2 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2
-          flex items-center justify-center h-11 transition-colors text-white" />
+          {/* <Generating className="relative left-4 right-4 bottom-5 mt-2 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2
+          flex items-center justify-center h-11 transition-colors text-white" /> */}
 
         </div>
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">

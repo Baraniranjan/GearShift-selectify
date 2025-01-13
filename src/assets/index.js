@@ -1,6 +1,10 @@
 import brainwave from "./brainwave.svg";
 import SelectifyLogo from "./SelectifyLogo.png";
+import SelectifyTabLogo from "./SelectifyTabLogo.png";
+import Selectify0Logo from "./Selectify0Logo.png";
+import SelectifyPlusLogo from "./Selectify+Logo.png";
 import check from "./check.svg";
+import checkYellow from "./checkYellow.svg"
 import brainwaveSymbol from "./brainwave-symbol.svg";
 import brainwaveWhiteSymbol from "./brainwave-symbol-white.svg";
 import play from "./play.svg";
@@ -49,10 +53,10 @@ import stars from "./pricing/stars.svg";
 import coins from "./roadmap/coins.png";
 import done from "./roadmap/done.svg";
 import hero from "./roadmap/hero.png";
-import roadmap1 from "./roadmap/image-1.png";
+import roadmap1 from "./roadmap/watha.png";
 import roadmap2 from "./roadmap/image-2.png";
 import roadmap3 from "./roadmap/image-3.png";
-import roadmap4 from "./roadmap/image-4.png";
+import roadmap4 from "./otha.png";
 import undone from "./roadmap/undone.svg";
 
 import notification1 from "./notification/image-1.png";
@@ -88,10 +92,47 @@ import instagram from "./socials/instagram.svg";
 import telegram from "./socials/telegram.svg";
 import twitter from "./socials/twitter.svg";
 
+
+import logo from "./logo.svg";
+import backend from "./backend.png";
+import creator from "./creator.png";
+import mobile from "./mobile.png";
+import web from "./web.png";
+import github from "./github.png";
+import menu from "./menu.svg";
+import close from "./close.svg";
+
+import css from "./tech/css.png";
+import docker from "./tech/docker.png";
+import figma1 from "./tech/figma.png";
+import git from "./tech/git.png";
+import html from "./tech/html.png";
+import javascript from "./tech/javascript.png";
+import mongodb from "./tech/mongodb.png";
+import nodejs from "./tech/nodejs.png";
+import reactjs from "./tech/reactjs.png";
+import redux from "./tech/redux.png";
+import tailwind from "./tech/tailwind.png";
+import typescript from "./tech/typescript.png";
+import threejs from "./tech/threejs.svg";
+
+import meta from "./company/meta.png";
+import shopify from "./company/shopify.png";
+import starbucks from "./company/starbucks.png";
+import tesla from "./company/tesla.png";
+
+import carrent from "./carrent.png";
+import jobit from "./jobit.png";
+import tripguide from "./tripguide.png";
+
 export {
   brainwave,
   SelectifyLogo,
+  SelectifyTabLogo,
+  Selectify0Logo,
+  SelectifyPlusLogo,
   check,
+  checkYellow,
   check2,
   loading1,
   brainwaveSymbol,
@@ -120,6 +161,7 @@ export {
   curve2,
   discord,
   figma,
+  figma1,
   framer,
   notion,
   photoshop,
@@ -170,4 +212,32 @@ export {
   instagram,
   telegram,
   twitter,
+
+  logo,
+  backend,
+  creator,
+  mobile,
+  web,
+  github,
+  menu,
+  close,
+  css,
+  docker,
+  git,
+  html,
+  javascript,
+  mongodb,
+  nodejs,
+  reactjs,
+  redux,
+  tailwind,
+  typescript,
+  threejs,
+  meta,
+  shopify,
+  starbucks,
+  tesla,
+  carrent,
+  jobit,
+  tripguide,
 };
