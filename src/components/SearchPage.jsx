@@ -8,9 +8,14 @@ const SearchPage = () => {
 
   // Fetch the data when the component mounts
   useEffect(() => {
-    fetch(`http://localhost:5432/find-talent?${queryParams.toString()}`)
+    fetch(`http://localhost:5432/find-talent?${query.toString()}`)
       .then((res) => res.json())
-      .then((data) => setData(data));
+      .then((data) => {
+        setData(data);
+        console.log('data 0 - ',data);
+      });
+
+     
   }, []);
 
   // Get the search query from the URL (if it exists)

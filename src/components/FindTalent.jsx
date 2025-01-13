@@ -142,7 +142,7 @@ function FindTalent() {
     setAskButton(true); // Set the ask button flag to true
   
     // Navigate to /find-talent/search?q=<searchQuery> with the query in the URL
-    navigate(`/find-talent/search?q=${event.target.value}`);
+    navigate(`/search?q=${searchQuery}`);
   };
 
   return (
@@ -163,7 +163,7 @@ function FindTalent() {
           <p className='body-3 max-w-3xl mx-auto mb-3 text-n-2 lg:mb-7'
           //className="text-gray-600 mb-6"
           >
-            Anything that you want to ask, please type in here and sbumit
+            Find your character here!
           </p>
           {/* <form > */}
           {/* <input
@@ -173,17 +173,17 @@ function FindTalent() {
             value={searchQuery}
             // onChange={(e) => handleSearchChange(e)}
           /> */}
-          <Generating className="relative left-4 right-4 bottom-5 mt-2 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2
+          <Generating className="relative left-4 right-4 bottom-5 mt-16 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2
             flex items-center justify-center h-11 transition-colors text-white" 
             value={searchQuery}/>
 
-          <button
+          {/* <button
             type="button"
             className="px-6 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
             onClick={(e) => handleSearchChange(e)}
           >
             ASK!
-          </button>
+          </button> */}
           {/* <div className="relative z-1 max-w-[62rem] mx-auto text-center">
               <Button white
               onClick={(e) => handleSearchChange(e)}>

@@ -6,6 +6,7 @@ import { heroBackground } from '../../assets';
 import { LeftCurve, RightCurve } from "../design/Collaboration";
 import { brainwaveSymbol, check, SelectifyTabLogo } from "../../assets";
 import { collabApps, collabContent, collabText } from "../../constants";
+import TimedParagraphs from './TimedParagraphs';
 
 
 function UploadResume() {
@@ -14,6 +15,7 @@ function UploadResume() {
   let [fileName, setFileName] = useState('');
   let [errorMessage, setErrorMessage] = useState('');
   const [userFiles, setUserFiles] = React.useState([]);
+  const [showTimedParagraphs, setShowTimedParagraphs] = useState(false);
 
   useEffect(() => {
     console.log('Navigating to UploadResume');
@@ -54,8 +56,10 @@ function UploadResume() {
         .catch((error) => {
           console.error('Error uploading file:', error);
         });
+        setShowTimedParagraphs(true);
     } else {
       setErrorMessage('Please select at least one file.');
+      setShowTimedParagraphs(false);
     }
   };
 
@@ -64,6 +68,7 @@ function UploadResume() {
     setFileName(null);
     setErrorMessage('');
     setUserFiles([]);
+    setShowTimedParagraphs(false);
   };
 
   const addFile = (e) => {
@@ -234,6 +239,7 @@ function UploadResume() {
               })}
             </ul>
             )}
+            {showTimedParagraphs && <TimedParagraphs />}
             </div>
 
             <div className="flow-root flex-grow">

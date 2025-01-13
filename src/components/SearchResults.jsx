@@ -13,8 +13,12 @@ function SearchResults() {
 
   const fetchFilteredResults = async () => {
     try {
-      const queryParams = new URLSearchParams({ searchQuery });
-      const response = await fetch(`http://localhost:5432/find-talent/search?${queryParams.toString()}`);
+      const urlParams = new URLSearchParams( location.search );
+      console.log('params ' ,urlParams)
+      const queryParam = urlParams.get("q") || ""; 
+      console.log(location.search);
+      setSearchQuery(queryParam);
+      const response = await fetch(`http://localhost:5432/find-talent/?${searchQuery.toString()}`);
       const data = await response.json();
       setSearchResponse(data);
       setPreSelectedFilters(data.filters || []);
