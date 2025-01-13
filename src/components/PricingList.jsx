@@ -8,19 +8,21 @@ const PricingList = () => {
       {pricing.map((item) => (
         <div
           key={item.id}
-          className="w-[19rem] max-lg:w-full h-full px-6 bg-n-8 border border-n-6 rounded-[2rem] lg:w-auto even:py-14 odd:py-8 odd:my-4 [&>h4]:first:text-color-1 [&>h4]:even:text-color-2 [&>h4]:last:text-color-3"
+          className="w-[19rem] max-lg:w-full h-full px-12 bg-n-8 border border-n-6 rounded-[2rem] lg:w-auto even:py-8 odd:py-8 odd:my-4 [&>h4]:first:text-color-1 [&>h4]:even:text-color-2 [&>h4]:last:text-color-3"
         >
-          <h4 className="h1 mb-4 font-bangers text-center">{item.title}</h4>
+          {/* <h4 className="h1 mb-4 font-bangers text-center">{item.title}</h4> */}
+          <img className="block w-[18rem] xl:mr-8 ml-32"
+          src={item.id === '0' ? Selectify0Logo : SelectifyPlusLogo}></img>
 
-          <p className="body-2 min-h-[4rem] mb-3 text-n-1/50">
+          <p className="body-2 min-h-[4rem] ml-3 mt-3 mb-2 text-n-1/50">
             {item.description}
           </p>
 
-          <div className="flex items-center h-[5.5rem] mb-6">
+          <div className="flex items-center h-[5rem] mb-6">
             {item.price && (
               <>
                 <div className="h3">$</div>
-                <div className="text-[5.5rem] leading-none font-bold">
+                <div className="text-[5rem] leading-none font-bold">
                   {item.price}
                 </div>
               </>
@@ -29,7 +31,7 @@ const PricingList = () => {
 
           <Button
             className="w-full mb-6"
-            href={item.price ? "/pricing" : "mailto:contact@jsmastery.pro"}
+            href={item.price ? "/pricing" : "mailto:contact@selectify.pro"}
             white={!!item.price}
           >
             {item.price ? "Get started" : "Contact us"}

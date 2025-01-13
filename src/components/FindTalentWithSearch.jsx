@@ -91,7 +91,8 @@ function FindTalent() {
             </Button> */}
 
             <Generating className="relative left-4 right-4 bottom-5 mt-2 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2
-            flex items-center justify-center h-11 transition-colors text-white" />
+            flex items-center justify-center h-11 transition-colors text-white" 
+            value={searchQuery}/>
 
           </div>
           <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">

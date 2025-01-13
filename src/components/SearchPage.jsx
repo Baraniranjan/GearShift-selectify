@@ -8,7 +8,7 @@ const SearchPage = () => {
 
   // Fetch the data when the component mounts
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch(`http://localhost:5432/find-talent?${queryParams.toString()}`)
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);

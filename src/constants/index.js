@@ -82,7 +82,7 @@ export const navigation = [
   {
     id: "2",
     title: "Post a Job",
-    url: "#post-a-job",
+    url: "/post-a-job",
   },
   {
     id: "3",
@@ -115,51 +115,57 @@ export const notificationImages = [notification4, notification3, notification2];
 export const companyLogos = [yourlogo, yourlogo, yourlogo, yourlogo, yourlogo];
 
 export const brainwaveServices = [
-  "Photo generating",
-  "Photo enhance",
-  "Seamless Integration",
+  "Cards & Role Selection",
+  "Text Based Querying",
+  "Advanced Key Filters",
 ];
 
 export const brainwaveServicesIcons = [
-  recording03,
-  recording01,
-  disc02,
-  chromecast,
-  sliders04,
+  // recording03,
+  // recording01,
+  // disc02,
+  // chromecast,
+  // sliders04,
+  benefitActorIcon,
+  benefitCamerIcon,
+  benefitCinemaIcon,
+  benefitDirectorIcon,
+  benefitMicrophoneIcon,
 ];
 
 export const roadmap = [
   {
     id: "0",
-    title: "Voice recognition",
-    text: "Enable the chatbot to understand and respond to voice commands, making it easier for users to interact with the app hands-free.",
-    date: "May 2023",
-    status: "done",
-    imageUrl: roadmap1,
-    colorful: true,
-  },
-  {
-    id: "1",
-    title: "Gamification",
-    text: "Add game-like elements, such as badges or leaderboards, to incentivize users to engage with the chatbot more frequently.",
-    date: "May 2023",
-    status: "progress",
+    title: "Jasko",
+    text: "A bot which interacts and assists users in maximizing the output from Selectify",
+    date: "Jan 2025",
+    status: "In-Progress",
     imageUrl: roadmap2,
   },
   {
+    id: "1",
+    title: "Voice recognition",
+    text: "Enables Jasko to understand and respond to voice commands, making it easier for users to interact with the app hands-free.",
+    date: "Jan 2025",
+    status: "In-Progress",
+    imageUrl: roadmap1,
+    colorful: true,
+  },
+  
+  {
     id: "2",
-    title: "Chatbot customization",
-    text: "Allow users to customize the chatbot's appearance and behavior, making it more engaging and fun to interact with.",
-    date: "May 2023",
-    status: "done",
+    title: "Recommendation Engine",
+    text: "Cognitive Suggestion of Profiles based on past searches and current selections to provide a variety of talent profiles to choose from",
+    date: "Jan 2025",
+    status: "In-Progres",
     imageUrl: roadmap3,
   },
   {
     id: "3",
-    title: "Integration with APIs",
-    text: "Allow the chatbot to access external data sources, such as weather APIs or news APIs, to provide more relevant recommendations.",
-    date: "May 2023",
-    status: "progress",
+    title: "Language Translation Features",
+    text: "Allow the chatbot or manual input in prominent languages to be translated and fed into Selectify",
+    date: "Jan 2025",
+    status: "In-Progres",
     imageUrl: roadmap4,
   },
 ];
@@ -289,7 +295,7 @@ export const benefits = [
   },
   {
     id: "1",
-    title: "Director",
+    title: "Dancer",
     text: "",
     backgroundUrl: "./src/assets/benefits/card-3.svg",
     iconUrl: benefitDirectorIcon,
@@ -604,6 +610,39 @@ const projects = [
     ],
     image: tripguide,
     source_code_link: "https://github.com/",
+  },
+];
+
+export const filterData = [
+  {
+    label: 'Gender',
+    options: ['Male', 'Female'],
+    name: 'gender',
+  },
+  {
+    label: 'Age',
+    options: ['20-30', '30-40', 'Above 40'],
+    name: 'years',
+  },
+  {
+    label: 'Genres',
+    options: ['Action', 'Action/Drama', 'Dance', 'Musical', 'Sci-fi', 'Romance', 'Rom-Com', 'Comedy', 'Drama', 'Political Thriller'],
+    name: 'genres',
+  },
+  {
+    label: 'Skills',
+    options: ['Sports', 'Dance', 'Martial Arts', 'Acting', 'Musician'],
+    name: 'skills',
+  },
+  {
+    label: 'Ethnicity',
+    options: ['Asian', 'Black', 'Caucasian', 'Hispanic', 'Other'],
+    name: 'ethnicity',
+  },
+  {
+    label: 'Experience',
+    options: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    name: 'experience',
   },
 ];
 

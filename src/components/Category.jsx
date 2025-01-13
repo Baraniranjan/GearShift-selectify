@@ -202,6 +202,8 @@ function Category(item) {
   
        setFilteredData(filteredProducts);  // Update filtered data
      }, [selectedFilters, userData]);
+
+     
    const resetFilters = () => {
        setSelectedFilters([])
        setFilteredData(userData)
