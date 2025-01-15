@@ -170,16 +170,17 @@ useEffect(() => {
                 <p className="text-l text-white font-bold mb-8">{member.name}</p>
                 <p className="text-base text-gray-400 font-normal mb-2">{member.role}</p>
                 <p className="text-xl text-white font-normal mb-3">{member.title}</p>
-                <p className="text-base text-gray-400 font-normal">{member.location}</p>
-                 {/* Description Header */}
-                 <div className="mt-4 text-l font-bold text-white">
-                    Description:
-                  </div>
-                <p className="text-base text-gray-400 font-normal">{member.description}</p>
+                <p className="text-base text-gray-400 font-normal">{member.gender}</p>
                 <div className="mt-4 text-l font-bold text-white">
-                    Dates and Location:
+                    Ethnicity
                   </div>
-                <p className="text-base text-gray-400 font-normal">{member.datesAndLocation}</p>
+                <p className="text-base text-gray-400 font-normal">{member.ethnicity}</p>
+                <p className="text-base text-gray-400 font-normal">{member.location}</p>
+ 
+                <div className="mt-4 text-l font-bold text-white">
+                    Roles
+                  </div>
+                <p className="text-base text-gray-400 font-normal">{member.roles}</p>
 
                 {/* Centered Buttons Section */}
                 <div className="flex gap-6 justify-center mt-6">

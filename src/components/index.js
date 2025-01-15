@@ -21,10 +21,12 @@ import CanvasLoader from "./Loader";
 import PreFilterDropdown from "./PreFilterDropdown.jsx";
 import Summarize from "./Summarize.jsx";
 import Tools from "./Tools.jsx";
+import ToolsData from "./ToolsData.jsx"
 
 export {
     Header,
     Footer,
+    ToolsData,
     Summarize,
     UploadResume,
     Category,

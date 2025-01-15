@@ -17,18 +17,24 @@ function Summarize() {
 
 	const handleSubmit = async () => {
 		try {
-      const response = await fetch(`http://localhost:5432/search?q=${text}`);
+      const response = await fetch(`http://localhost:5432/summerize?q=${text}`);
       const data = await response.json();
-      setResults(data.results);
+	  console.log('data - ',data.script);
+      setResults(data.script);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
 	};
 
-	const copyToClipboard = () => {
-		navigator.clipboard.writeText(response);
-		alert('Response copied to clipboard!');
-	};
+	const handleCopy = () => {
+		navigator.clipboard.writeText(results)
+		  .then(() =>alert('Results copied to clipboard!'))
+		  .catch(err =>console.error('Failed to copy text: ', err));
+	  };
+	// const copyToClipboard = () => {
+	// 	navigator.clipboard.writeText(response);
+	// 	alert('Response copied to clipboard!');
+	// };
 
 	const navigate = useNavigate();
 

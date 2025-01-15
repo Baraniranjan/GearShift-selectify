@@ -7,7 +7,7 @@ import App from "./App.jsx";
 import Login from "./components/Login.jsx";
 import {SearchPage, UploadResume,Category } from './components/index.js';
 import NotFoundPage from "./pages/NotFoundPage.jsx";
-import { FindTalent, FindJobs,Summarize,Tools } from "./components/index.js";
+import { FindTalent, FindJobs,Summarize,Tools,ToolsData } from "./components/index.js";
 import PostAJob from "./components/PostAJob.jsx";
 import SearchResults from "./components/SearchResults.jsx";
 

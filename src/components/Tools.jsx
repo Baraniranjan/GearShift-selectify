@@ -18,7 +18,7 @@ const cardData = [
         ),
         label: "Learn More",
         functionality: "search",
-        path:"http://localhost:5173/tools/learn-more"
+        path:"http://localhost:5175/tools/learn-more"
     },
     {
         title: "Summarizer 1.0",
@@ -30,7 +30,7 @@ const cardData = [
          
         ),
         label: "Summarize",
-        path:"http://localhost:5173/tools/summarize"
+        path:"http://localhost:5175/tools/summarize"
     },
     {
         title: "Role Radar",
@@ -42,7 +42,7 @@ const cardData = [
          
         ),
         label: "Find the role",
-        path:"http://localhost:5173/tools/identify-roles"
+        path:"http://localhost:5175/tools/identify-roles"
     },
     {
    
@@ -55,7 +55,7 @@ const cardData = [
              
             ),
             label: "Get Profiles",
-            path: "http://localhost:5173/tools/screen-profiles"
+            path: "http://localhost:5175/tools/screen-profiles"
         },
        
 ];
