@@ -126,6 +126,13 @@ useEffect(() => {
   setFilteredData(data)
 };
 
+const handleSelect = (filterName, selectedOption) => {
+  setSelectedFilters((prevState) => ({
+    ...prevState,
+    [filterName]: selectedOption, // Update selected option for the specific filter
+  }));
+};
+
 
 //   const cleanQuery = (query) => query.trim().toLowerCase();
 //   const search_params = Object.keys(Object.assign({}, ...data));
