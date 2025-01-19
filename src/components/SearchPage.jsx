@@ -3,11 +3,20 @@ import { useLocation } from "react-router-dom";
 import PreFilterDropdown from "./PreFilterDropdown";
 import { filterData } from "../constants";
 import Section from "./Section"
+import {Dropdown} from "./index"
 
 const SearchPage = () => {
   const [data, setData] = useState([]);
+  const [filteredData,setFilteredData ] = useState([]);
   const [query, setQuery] = useState('');
   const [cartItems, setCartItems] = useState([]);
+  const [selectedFilters, setSelectedFilters] = useState({
+    gender: '',
+     age: 0,
+     genres: '',
+     ethnicity:'',
+     experience:0
+});
   console.log(query);
   const location = useLocation(); // Get the current location (URL)
   // useEffect(() => {
@@ -65,6 +74,7 @@ useEffect(() => {
               const response = await fetch(`http://localhost:5432/search?q=${query}`);
               const data = await response.json();
               setData(data.results);
+              setFilteredData(data.results);
               console.log('response data - ', data.results);
           } catch (error) {
               console.error('Error fetching data:', error);
@@ -73,7 +83,48 @@ useEffect(() => {
   };
 
   fetchData();  // Call the async function
-}, [query]);  // Dependency on query
+}, [query]); 
+
+
+useEffect(() => {
+  const filteredProducts = filteredData.filter((product) => {
+    // Filter by gender
+   // const fdata = {r: [product.roles]}
+    //console.log('f',fdata.r[0]);
+    //console.log('roles', product);
+    if (selectedFilters.gender && product.gender.toLowerCase() !== selectedFilters.gender.toLowerCase()) {
+       //console.log(product.Gender)
+      return false;
+    }
+
+    // Filter by years of experience (age in this case)
+    if (selectedFilters.years && parseInt(selectedFilters.years) !== product.age) {
+      return false;
+    }
+
+    // Filter by genre
+    if (selectedFilters.genres && product.genres.toLowerCase() !== selectedFilters.genres.toLowerCase()) {
+      return false;    
+    }
+
+    if (selectedFilters.ethnicity && product.ethnicity.toLowerCase() !== selectedFilters.ethnicity.toLowerCase()) {
+     return false;    
+   }
+
+   if (selectedFilters.experience && parseInt(selectedFilters.experience) !== product.experience) {
+     return false;
+   }
+
+    return true;
+  });
+
+  setFilteredData(filteredProducts);  // Update filtered data
+}, [selectedFilters, data]);
+ // Dependency on query
+ const resetFilters = () => {
+  setSelectedFilters([])
+  setFilteredData(data)
+};
 
 
 //   const cleanQuery = (query) => query.trim().toLowerCase();
@@ -154,11 +205,42 @@ useEffect(() => {
 //     };
 
     return (
-      <Section className="max-w-7xl mx-auto px-4 lg:px-10 py-12">
+      <div>
+         <Header />
+         <Section className="max-w-7xl mx-auto px-4 lg:px-10 py-12">
+         <div className="flex flex-row gap-4 justify-center">
+      {filterData.map((filter, index) => (
+            <div className="flex ">
+          <Dropdown
+          key={filter.label}
+          label={filter.label}
+          options={filter.options}
+          onSelect={(selectedOption) =>
+            handleSelect(filter.name, selectedOption)
+          }
+          className="w-full max-w-xs"
+          /> 
+            
+          
+          </div>
+          
+             ))}
+      <div className="flex justify-center mt-4">
+             <button
+               onClick={resetFilters}
+               className="bg-blue-500 text-white p-2 rounded-md"
+             >
+               Reset Filters
+             </button>
+           </div> 
+           {/* <Link to="/home">     
+      <div className="bg-n-14"> Back to Home</div>         */}
+
+      </div>
       <div className="mt-10">
         {/* Grid for cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {data.map((member, index) => (
+          {filteredData.map((member, index) => (
             <div key={index} className="w-full bg-black rounded-lg shadow-lg p-10 flex flex-col justify-center items-center">
               <div className="mb-8">
                 <img
@@ -209,6 +291,8 @@ useEffect(() => {
         </div>
       </div>
     </Section>
+      </div>
+      
       );
 
 

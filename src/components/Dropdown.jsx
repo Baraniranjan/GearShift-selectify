@@ -15,7 +15,7 @@ const Dropdown = ({ label, options, onSelect }) => {
       <div>
         <button
           type="button"
-          className="flex w-full bg-n-14 justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+          className="flex w-full bg-n-14 justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300"
           onClick={toggleDropdown}
         >
           <div className="text-white">{label}</div>

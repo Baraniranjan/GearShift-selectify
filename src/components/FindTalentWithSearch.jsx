@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Generating from "./Generating";
 import { useRef } from "react";
 import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
-import { curve, heroBackground, robot, owl } from "../assets";
+import { curve, heroBackground, robotChair, owl } from "../assets";
 import Benefits from './Benefits';
  
  
@@ -106,7 +106,7 @@ function FindTalent() {
 
                 <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
                   <img
-                    src={robot}
+                    src={robotChair}
                     className="w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%]"
                     width={1024}
                     height={490}
