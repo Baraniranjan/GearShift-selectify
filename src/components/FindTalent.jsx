@@ -1,12 +1,13 @@
-import { Header, Footer, Section, Filters1 } from './index'
+import { Header, Footer, Section, Filters1, HeroSearch } from './index'
 import { useState, useEffect } from 'react'
 import { filterData } from "../constants/index";
-import { Dropdown,PreFilterDropdown } from "./index"
+import { Dropdown,PreFilterDropdown,Project } from "./index"
 import Benefits from './Benefits';
 import { curve, heroBackground, robot, owl } from "../assets";
 import Button from "./Button";
 import Generating from "./Generating";
 import { useNavigate } from "react-router-dom";
+import styles from "./style";
 
 
 function FindTalent() {
@@ -146,18 +147,34 @@ function FindTalent() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen"
+    style={{
+      background: `url(${heroBackground})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center center',
+      zIndex: -1,
+    }}
+    >
       <Header />
+      <div className={` ${styles.flexStart}`}>
+      <div className={`${styles.boxWidth}`}>
+        <HeroSearch />
+      </div>
+    </div>
+      
       <Section
         id="submit-section"
         //className="bg-gray-50 text-center"
         crosses={true}
+        className ={"lg:py-0 sm:py-0"}
       >
+       
 
-        <div className='relative z-1 w-fit mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]'
+        <div className='relative z-1 w-fit mx-auto text-center '
+         //mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]
         //className="max-w-2xl mx-auto mb-12 p-4 bg-white rounded-lg shadow-md"
         >
-          <h2 className='h3 mb-3'
+          <h2 className='h1 mb-3 font-bangers text-white'
           //className="text-2xl font-bold text-gray-800 mb-4"
           >Submit Your Question</h2>
           <p className='body-3 max-w-3xl mx-auto mb-3 text-n-2 lg:mb-7'
@@ -193,7 +210,8 @@ function FindTalent() {
 
           {/* </form> */}
 
-        <Benefits />
+        {/* <Benefits /> */}
+       
         </div>
         {askButton ? <div className="flex justify-center w-1/2 mx-auto p-4 bg-purple-950 rounded-lg shadow-md ">
           <div className="flex items-center flex-row gap-4">
@@ -218,7 +236,7 @@ function FindTalent() {
           </div>
         </div> : null}
 
-
+        <Project />
       </Section>
       <Footer />
 

@@ -9,6 +9,7 @@ import { Contact, StarsCanvas } from "./components";
 import Pricing from "./components/Pricing";
 import Roadmap from "./components/Roadmap";
 import Services from "./components/Services";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (

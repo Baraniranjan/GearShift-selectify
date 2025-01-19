@@ -29,7 +29,7 @@ const Generating = ({ className }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div
-      className={`flex items-center h-[3.5rem] px-6 bg-n-8 rounded-[1.7rem] ${
+      className={`flex items-center border-2 border-[#BE71D3] h-[3.5rem] px-6 bg-n-8  rounded-[1.7rem] ${
         className || ""
       } text-base`}
     >

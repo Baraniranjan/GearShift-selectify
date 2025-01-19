@@ -21,7 +21,10 @@ import CanvasLoader from "./Loader";
 import PreFilterDropdown from "./PreFilterDropdown.jsx";
 import Summarize from "./Summarize.jsx";
 import Tools from "./Tools.jsx";
-import ToolsData from "./ToolsData.jsx"
+import ToolsData from "./ToolsData.jsx";
+import HeroSearch from "./HeroSearch.jsx";
+import GetStarted from "./GetStarted.jsx";
+import {Project} from "./Project.jsx";
 
 export {
     Header,
@@ -50,5 +53,8 @@ export {
     ComputersCanvas, 
     StarsCanvas,
     PreFilterDropdown,
-    Tools
+    Tools,
+    HeroSearch,
+    GetStarted,
+    Project
 }

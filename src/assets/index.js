@@ -1,4 +1,6 @@
 import brainwave from "./brainwave.svg";
+import arrowUp from "./arrow-up.svg";
+import Discount from "./Discount.svg"
 import SelectifyLogo from "./SelectifyLogo.png";
 import SelectifyTabLogo from "./SelectifyTabLogo.png";
 import Selectify0Logo from "./Selectify0Logo.png";
@@ -125,6 +127,15 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
+import actor from "./actor.jfif";
+import camera from "./camera.jfif";
+import dancer from "./dancer.jfif";
+import scriptwriter from "./scriptwriter.jfif";
+import singer from "./singer.jfif";
+import vfxartist from "./VFXartist.jfif";
+import voice from "./Voice.jfif";
+import robotChair from "./robot_chair.png";
+
 export {
   brainwave,
   SelectifyLogo,
@@ -240,4 +251,14 @@ export {
   carrent,
   jobit,
   tripguide,
+  arrowUp,
+  Discount,
+  dancer,
+  scriptwriter,
+  camera,
+  actor,
+  singer,
+  vfxartist,
+  voice,
+  robotChair,
 };

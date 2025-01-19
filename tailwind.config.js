@@ -11,6 +11,10 @@ export default {
   theme: {
     extend: {
       colors: {
+        primary: "#00040f",
+        secondary: "#00f6ff",
+        dimWhite: "rgba(255, 255, 255, 0.7)",
+        dimBlue: "rgba(9, 151, 124, 0.1)",
         color: {
           1: "#AC6AFF",
           2: "#FFC876",
@@ -36,6 +40,7 @@ export default {
           11: "#1B1B2E",
           12: "#2E2A41",
           13: "#6C7275",
+          14:"#BE71D3",
         },
       },
       fontFamily: {
@@ -43,6 +48,7 @@ export default {
         code: "var(--font-code)",
         grotesk: "var(--font-grotesk)",
         bangers: "var(--font-bangers)",
+        poppins: ["Poppins", "sans-serif"],
       },
       letterSpacing: {
         tagline: ".15em",
@@ -82,6 +88,14 @@ export default {
         "benefit-card-5": "url(assets/benefits/card-5.svg)",
         "benefit-card-6": "url(assets/benefits/card-6.svg)",
       },
+    },
+    screens: {
+      xs: "480px",
+      ss: "620px",
+      sm: "768px",
+      md: "1060px",
+      lg: "1200px",
+      xl: "1700px",
     },
   },
   plugins: [

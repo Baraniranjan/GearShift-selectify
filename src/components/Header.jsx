@@ -51,7 +51,7 @@ const Header = () => {
               <Link
               key={item.id}
               to={item.url}
-              className={`block relative font-bangers text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
+              className={`block relative font-bangers text-2xl uppercase text-n-1 no-underline transition-colors hover:text-color-1 ${
                 item.onlyMobile ? "lg:hidden" : ""
               } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xl ${
                 item.url === pathname.hash ? "z-2 lg:text-n-1" : "lg:text-n-1"
@@ -65,7 +65,7 @@ const Header = () => {
           <HamburgerMenu />
         </nav>
 
-        <Button className="hidden lg:flex font-bangers" href="/">
+        <Button className="hidden lg:flex no-underline font-bangers" href="/">
           Logout
         </Button>
 
