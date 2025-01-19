@@ -158,7 +158,8 @@ export const Project = () => {
       </Container>
       <img className="background-image-right" src="" alt="Background shape" />
 
-      <div classNAme="flex w-1/2 mx-auto p-4 bg-white rounded-lg shadow-md ">
+      <div className="flex w-full justify-center mx-auto p-4 rounded-lg shadow-md ">
+      <div className="flex flex-col">
       <div className="flex flex-row gap-4 justify-center">
       {showfilters ? (filterData.map((filter, index) => (
             <div className="flex ">
@@ -176,10 +177,11 @@ export const Project = () => {
           </div>
           
              ))) : null}
-      {showfilters? <div className="flex justify-center mt-4">
+      {showfilters? <div className="">
              <button
                onClick={resetFilters}
-               className="bg-blue-500 text-white p-2 rounded-md"
+               className="bg-blue-500 text-white p-2 font-semibold rounded-md w-full max-w-xs"
+            //    "flex w-full justify-center gap-x-1.5 rounded-md px-3 py-2 text-black font-semibold shadow-sm ring-1 ring-inset ring-gray-300 bg-n-14 hover:bg-white"
              >
                Reset Filters
              </button>
@@ -187,6 +189,8 @@ export const Project = () => {
               
 
       </div>
+      </div>
+      
       
    
       </div>
