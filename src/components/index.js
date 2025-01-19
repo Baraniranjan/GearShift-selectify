@@ -19,6 +19,15 @@ import Feedbacks from "./Feedbacks";
 import Contact from "./Contact";
 import CanvasLoader from "./Loader";
 import PreFilterDropdown from "./PreFilterDropdown.jsx";
+import Tools from "./Tools.jsx";
+import LearnMore from "./LearnMore.jsx"
+import Summarize from "./Summarize.jsx";
+import IdentifyRoles from "./IdentifyRoles.jsx";
+import ScreenProfiles from "./ScreenProfiles.jsx";
+import SummarizeData from "./SummarizeData.jsx";
+import ToolsData from "./ToolsData.jsx";
+import IdentifyData from "./IdentifyData.jsx";
+ 
 
 export {
     Header,
@@ -45,4 +54,12 @@ export {
     ComputersCanvas, 
     StarsCanvas,
     PreFilterDropdown,
+    Tools,
+    LearnMore,
+    Summarize,
+    IdentifyRoles,
+    ScreenProfiles,
+    SummarizeData,
+    ToolsData,
+    IdentifyData
 }

@@ -143,6 +143,7 @@ function FindTalent() {
   
     // Navigate to /find-talent/search?q=<searchQuery> with the query in the URL
     navigate(`/search?q=${searchQuery}`);
+    //navigate(`/find-talent?q=${searchQuery}`);
   };
 
   return (

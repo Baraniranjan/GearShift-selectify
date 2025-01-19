@@ -13,6 +13,7 @@ const Generating = ({ className }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     navigate(`/search?q=${searchQuery}`);
+    //navigate(`/find-talent?q=${searchQuery}`);
   };
 //   const handleSearch = useCallback(
 //     debounce((searchTerm) => {

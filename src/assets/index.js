@@ -125,6 +125,17 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
+import muthu from "./muthu-san.png";
+import venky from "./venky.png";
+import anumaam from "./anu_maam.png";
+
+import owl1 from "./bird1.png";
+import owl2 from "./bird2.png";
+import owl3 from "./bird3.png";
+import owl4 from "./bird4.png";
+import owl5 from "./TranslatorBird.png";
+import owl6 from "./RecommendationBird.png";
+
 export {
   brainwave,
   SelectifyLogo,
@@ -212,7 +223,9 @@ export {
   instagram,
   telegram,
   twitter,
-
+  muthu,
+  venky,
+  anumaam,
   logo,
   backend,
   creator,
@@ -240,4 +253,10 @@ export {
   carrent,
   jobit,
   tripguide,
+  owl1,
+  owl2,
+  owl3,
+  owl4,
+  owl5,
+  owl6
 };
