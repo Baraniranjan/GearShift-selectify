@@ -442,7 +442,16 @@ export const Project = () => {
                             </button>
                         </div> : null}
 
-                        <div className="mt-10">
+                       
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div className="mt-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10" id="filteredResults">
             {filteredData.map((member, index) => (
               <div key={index} className="w-full bg-black rounded-lg shadow-lg p-8 flex flex-col justify-between h-full cursor-pointer relative" onClick={() => handleCardClick(member)}>
@@ -501,15 +510,6 @@ export const Project = () => {
             ))}
           </div>
         </div>
-
-
-                    </div>
-                </div>
-
-
-
-            </div>
-
 
 
             {isModalOpen && selectedCard && (
