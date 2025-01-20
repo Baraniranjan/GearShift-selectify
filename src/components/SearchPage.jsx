@@ -25,6 +25,7 @@ const CardDetailModal = ({ member, onClose }) => {
           <p><strong>Ethnicity:</strong> {member.ethnicity}</p>
           <p><strong>Location:</strong> {member.location}</p>
           <p><strong>Roles:</strong> {member.roles}</p>
+          <p><strong>Skills:</strong> {member.skills}</p>
         </div>
         <div className="mt-6 flex justify-center">
           <button
@@ -124,21 +125,15 @@ useEffect(() => {
 
 useEffect(() => {
   const filteredProducts = filteredData.filter((product) => {
-    // Filter by gender
-   // const fdata = {r: [product.roles]}
-    //console.log('f',fdata.r[0]);
-    //console.log('roles', product);
+  
     if (selectedFilters.gender && product.gender.toLowerCase() !== selectedFilters.gender.toLowerCase()) {
-       //console.log(product.Gender)
       return false;
     }
 
-    // Filter by years of experience (age in this case)
     if (selectedFilters.years && parseInt(selectedFilters.years) !== product.age) {
       return false;
     }
 
-    // Filter by genre
     if (selectedFilters.genres && product.genres.toLowerCase() !== selectedFilters.genres.toLowerCase()) {
       return false;    
     }
@@ -164,7 +159,7 @@ useEffect(() => {
 
 const handleCardClick = (member) => {
   setSelectedCard(member);
-  setIsModalOpen(true); // Open the modal when a card is clicked
+  setIsModalOpen(true); 
 };
 
 const closeModal = () => {
@@ -330,11 +325,16 @@ const handleSelect = (filterName, selectedOption) => {
       <div className="mt-10">
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10" >
     {filteredData.map((member, index) => (
-      <div key={index} className="w-full bg-black rounded-lg shadow-lg p-8 flex flex-col justify-between h-full" onClick={handleCardClick}>
-        {/* Image Section */}
-        <div className="absolute top-2 right-2 bg-gray-800 text-white rounded-full p-2 text-xl font-bold">
-          2
-        </div>
+      <div key={index} className="w-full bg-black rounded-lg shadow-lg p-8 flex flex-col justify-between h-full cursor-pointer" onClick={()=>handleCardClick(member)}>
+       
+        {(member.score > 80) ? 
+        <div className="absolute top-2 right-2 bg-green-800 text-white rounded-full p-2 text-xl font-bold">
+          {member.score}
+        </div> 
+        : <div className="absolute top-2 right-2 bg-orange-800 text-white rounded-full p-2 text-xl font-bold">
+        {member.score}
+      </div>}
+        
         <div className="mb-6 flex justify-center">
           <img
             className="object-center object-cover rounded-full h-48 w-48 border-4 border-white shadow-lg"
@@ -343,18 +343,18 @@ const handleSelect = (filterName, selectedOption) => {
           />
         </div>
         <div className="text-center flex flex-col justify-between h-full">
-          <p className="text-l text-white font-bold mb-4">{member.name}</p>
-          <p className="text-base text-gray-400 font-normal mb-2">{member.role}</p>
-          <p className="text-xl text-white font-normal mb-3">{member.title}</p>
-          <p className="text-base text-gray-400 font-normal">{member.gender}</p>
+          <p className="text-l text-white font-bold mb-1">{member.name}</p>
+          <p className="text-base text-gray-400 font-normal">{member.location}</p>
+          <p className="text-base text-gray-400 font-normal mb-1">{member.role}</p>
+          <p className="text-base text-gray-400 font-normal mb-1">{member.years} years</p>
+          <p className="text-xl text-white font-normal mb-1">{member.title}</p>
 
-          <div className="mt-4 text-l font-bold text-white">
+          <div className="mt-1 text-l font-bold text-white">
             Ethnicity
           </div>
           <p className="text-base text-gray-400 font-normal">{member.ethnicity}</p>
-          <p className="text-base text-gray-400 font-normal">{member.location}</p>
 
-          <div className="mt-4 text-l font-bold text-white">
+          <div className="mt-1 text-l font-bold text-white">
             Roles
           </div>
           <p className="text-base text-gray-400 flex justify-center font-normal">{member.roles}</p>
