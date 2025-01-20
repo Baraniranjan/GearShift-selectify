@@ -92,7 +92,8 @@ import { Dropdown, Header, Footer } from "./index"
 
 const CardDetailModal = ({ member, onClose }) => {
   return (
-    <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
+    <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50"
+   >
       <div className="bg-white p-6 rounded-lg w-4/5 max-w-4xl flex relative">
 
         {/* Close Button (X at the top-right corner) */}
@@ -142,6 +143,109 @@ const CardDetailModal = ({ member, onClose }) => {
     </div>
   );
 };
+
+const staticData = [
+  {
+    "age": 30,
+    "awards": "Winner, Best Female Vocalist - Singapore Music Awards (2020). Nominee, Best Pop Album - Golden Melody Awards (2018). Winner, Breakthrough Artist of the Year - Asia Music Awards (2015)",
+    "career": "Provided vocals for several hit tracks in collaboration with well-known Asian producers and composers.Recorded theme songs for TV dramas and commercials, gaining widespread recognition in Southeast Asia.Developed a reputation for versatility, from romantic ballads to high-energy electronic dance tracks.",
+    "email": "amara.chen@email.com",
+    "ethnicity": "Asian (Chinese)",
+    "experience": 12,
+    "gender": "Female",
+    "image_path": "/candidates/amara.chen.jpg",
+    "location": "Singapore",
+    "name": "Amara Chen",
+    "phone": "+65 9876125432",
+    "roles": [
+        "Singer",
+        "Musician"
+    ],
+    "score": 85,
+    "skills": [
+        "Singer",
+        "Musician",
+        "Song writing",
+        "Live Performance",
+        "Multilingual"
+    ]
+},
+{
+  "age": 30,
+  "awards": "Winner, Best Female Vocalist - Singapore Music Awards (2020). Nominee, Best Pop Album - Golden Melody Awards (2018). Winner, Breakthrough Artist of the Year - Asia Music Awards (2015)",
+  "career": "Provided vocals for several hit tracks in collaboration with well-known Asian producers and composers.Recorded theme songs for TV dramas and commercials, gaining widespread recognition in Southeast Asia.Developed a reputation for versatility, from romantic ballads to high-energy electronic dance tracks.",
+  "email": "amara.chen@email.com",
+  "ethnicity": "Asian (Chinese)",
+  "experience": 12,
+  "gender": "Female",
+  "image_path": "/candidates/amara.chen.jpg",
+  "location": "Singapore",
+  "name": "Amara Chen",
+  "phone": "+65 9876125432",
+  "roles": [
+      "Singer",
+      "Musician"
+  ],
+  "score": 85,
+  "skills": [
+      "Singer",
+      "Musician",
+      "Song writing",
+      "Live Performance",
+      "Multilingual"
+  ]
+},
+{
+  "age": 30,
+  "awards": "Winner, Best Female Vocalist - Singapore Music Awards (2020). Nominee, Best Pop Album - Golden Melody Awards (2018). Winner, Breakthrough Artist of the Year - Asia Music Awards (2015)",
+  "career": "Provided vocals for several hit tracks in collaboration with well-known Asian producers and composers.Recorded theme songs for TV dramas and commercials, gaining widespread recognition in Southeast Asia.Developed a reputation for versatility, from romantic ballads to high-energy electronic dance tracks.",
+  "email": "amara.chen@email.com",
+  "ethnicity": "Asian (Chinese)",
+  "experience": 12,
+  "gender": "Female",
+  "image_path": "/candidates/amara.chen.jpg",
+  "location": "Singapore",
+  "name": "Amara Chen",
+  "phone": "+65 9876125432",
+  "roles": [
+      "Singer",
+      "Musician"
+  ],
+  "score": 85,
+  "skills": [
+      "Singer",
+      "Musician",
+      "Song writing",
+      "Live Performance",
+      "Multilingual"
+  ]
+},
+{
+  "age": 30,
+  "awards": "Winner, Best Female Vocalist - Singapore Music Awards (2020). Nominee, Best Pop Album - Golden Melody Awards (2018). Winner, Breakthrough Artist of the Year - Asia Music Awards (2015)",
+  "career": "Provided vocals for several hit tracks in collaboration with well-known Asian producers and composers.Recorded theme songs for TV dramas and commercials, gaining widespread recognition in Southeast Asia.Developed a reputation for versatility, from romantic ballads to high-energy electronic dance tracks.",
+  "email": "amara.chen@email.com",
+  "ethnicity": "Asian (Chinese)",
+  "experience": 12,
+  "gender": "Female",
+  "image_path": "/candidates/amara.chen.jpg",
+  "location": "Singapore",
+  "name": "Amara Chen",
+  "phone": "+65 9876125432",
+  "roles": [
+      "Singer",
+      "Musician"
+  ],
+  "score": 85,
+  "skills": [
+      "Singer",
+      "Musician",
+      "Song writing",
+      "Live Performance",
+      "Multilingual"
+  ]
+},
+]
 
 const SearchPage = () => {
   const [data, setData] = useState([]);
@@ -427,7 +531,7 @@ const SearchPage = () => {
         </div>
         <div className="mt-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10" >
-            {filteredData.map((member, index) => (
+            {staticData.map((member, index) => (
               <div key={index} className="w-full bg-black rounded-lg shadow-lg p-8 flex flex-col justify-between h-full cursor-pointer relative" onClick={() => handleCardClick(member)}>
 
 <div
@@ -452,7 +556,7 @@ const SearchPage = () => {
                   <p className="text-l text-white font-bold mb-1">{member.name}</p>
                   <p className="text-base text-gray-400 font-normal">{member.location}</p>
                   <p className="text-base text-gray-400 font-normal mb-1">{member.role}</p>
-                  <p className="text-base text-gray-400 font-normal mb-1">{member.experience} years</p>
+                  <p className="text-base text-gray-400 font-normal mb-1"> Experience :{member.experience} years</p>
                   <p className="text-xl text-white font-normal mb-1">{member.title}</p>
 
                   <div className="mt-1 text-l font-bold text-white">
