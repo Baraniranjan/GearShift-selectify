@@ -94,7 +94,7 @@ const CardDetailModal = ({ member, onClose }) => {
   return (
     <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50"
    >
-      <div className="bg-white p-6 rounded-lg w-4/5 max-w-4xl flex relative">
+      <div className="bg-black  p-6 rounded-lg w-4/5 max-w-4xl flex relative">
 
         {/* Close Button (X at the top-right corner) */}
         <button

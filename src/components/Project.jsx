@@ -201,7 +201,7 @@ const CardDetailModal = ({ member, onClose }) => {
         //   }}
           >
             <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
-        <div className="bg-white p-6 rounded-lg w-4/5 max-w-4xl flex relative">
+        <div className="bg-black p-6 rounded-lg w-4/5 max-w-4xl flex relative">
   
           <button
             className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
@@ -229,20 +229,20 @@ const CardDetailModal = ({ member, onClose }) => {
               src={member.image_path}
               alt={member.name}
             />
-            <p className="mt-4 text-xl font-bold text-center" style={{ color: '#000', fontSize: '16px' }}>{member.name}</p>
-            <p className="text-lg text-gray-500 text-center"style={{ color: '#000', fontSize: '16px' }}>{member.role}</p>
+            <p className="mt-4 text-xl font-bold text-center" style={{  fontSize: '16px' }}>{member.name}</p>
+            <p className="text-lg text-white text-center"style={{  fontSize: '16px' }}>{member.role}</p>
           </div>
   
           <div className="flex-grow px-6">
-            <h2 className="text-xl font-bold mb-4" style={{ color: '#000', fontSize: '24px' }}>Details</h2>
-            <div className="space-y-3">
-              <p style={{ color: '#000', fontSize: '16px' }}><strong>Gender:</strong> {member.gender}</p>
-              <p style={{ color: '#000', fontSize: '16px'}}><strong>Experience:</strong> {member.experience}</p>
-              <p style={{ color: '#000', fontSize: '16px' }}><strong>Ethnicity:</strong> {member.ethnicity}</p>
-              <p style={{ color: '#000', fontSize: '16px' }}><strong>Location:</strong> {member.location}</p>
-              <p style={{ color: '#000', fontSize: '16px' }}><strong>Awards:</strong> {member.awards}</p>
-              <p style={{ color: '#000', fontSize: '16px' }}><strong>Roles:</strong> {member.roles.join(', ')}</p>
-              <p style={{ color: '#000', fontSize: '16px' }}><strong>Skills:</strong> {member.skills.join(', ')}</p>
+            <h2 className="text-xl font-bold mb-4" style={{  fontSize: '24px' }}>Details</h2>
+            <div className="space-y-3 text-white">
+              <p style={{  fontSize: '16px' }}><strong>Gender:</strong> {member.gender}</p>
+              <p style={{  fontSize: '16px'}}><strong>Experience:</strong> {member.experience} years</p>
+              <p style={{  fontSize: '16px' }}><strong>Ethnicity:</strong> {member.ethnicity}</p>
+              <p style={{  fontSize: '16px' }}><strong>Location:</strong> {member.location}</p>
+              <p style={{  fontSize: '16px' }}><strong>Awards:</strong> {member.awards}</p>
+              <p style={{  fontSize: '16px' }}><strong>Roles:</strong> {member.roles.join(', ')}</p>
+              <p style={{  fontSize: '16px' }}><strong>Skills:</strong> {member.skills.join(', ')}</p>
             </div>
           </div>
         </div>
@@ -272,10 +272,10 @@ export const Project = () => {
         { id: "1", title: "Actor", description: "Design & Development", imgUrl: actor },
         { id: "2", title: "Camera", description: "Design & Development", imgUrl: camera },
         { id: "3", title: "Dancer", description: "Design & Development", imgUrl: dancer },
-        { id: "4", title: "Script Writer", description: "Design & Development", imgUrl: scriptwriter },
-        { id: "5", title: "Singer", description: "Design & Development", imgUrl: singer },
-        { id: "6", title: "VFX Artist", description: "Design & Development", imgUrl: vfxartist },
-        { id: "7", title: "Voice Artist", description: "Design & Development", imgUrl: voice },
+        // { id: "4", title: "Script Writer", description: "Design & Development", imgUrl: scriptwriter },
+        { id: "4", title: "Singer", description: "Design & Development", imgUrl: singer },
+        { id: "5", title: "VFX Artist", description: "Design & Development", imgUrl: vfxartist },
+        { id: "6", title: "Voice Artist", description: "Design & Development", imgUrl: voice },
     ];
 
     useEffect(() => {
@@ -394,7 +394,8 @@ export const Project = () => {
                         <TrackVisibility>
                             {({ isVisible }) => (
                                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                                    <Row>
+                                    {/* <Row> */}
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                                         {
                                             projects.map((project, index) => (
                                                 <ProjectCard
@@ -404,7 +405,8 @@ export const Project = () => {
                                                 />
                                             ))
                                         }
-                                    </Row>
+                                    </div>
+                                    {/* </Row> */}
                                 </div>
                             )}
                         </TrackVisibility>
@@ -442,7 +444,8 @@ export const Project = () => {
                             </button>
                         </div> : null}
 
-                        <div className="mt-10">
+        </div>
+        <div className="mt-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10" id="filteredResults">
             {filteredData.map((member, index) => (
               <div key={index} className="w-full bg-black rounded-lg shadow-lg p-8 flex flex-col justify-between h-full cursor-pointer relative" onClick={() => handleCardClick(member)}>
@@ -469,15 +472,15 @@ export const Project = () => {
                   <span className="text-l text-white font-bold mb-1">{member.name}</span>
                   <span className="text-base text-gray-400 font-normal">{member.location}</span>
                   <span className="text-base text-gray-400 font-normal mb-1">{member.role}</span>
-                  <span className="text-base text-gray-400 font-normal mb-1">Experience :{member.experience} years</span>
+                  <span className="text-base text-gray-400 font-normal mb-1">Experience : {member.experience} years</span>
                   <span className="text-xl text-white font-normal mb-1">{member.title}</span>
 
-                  <div className="mt-1 text-l font-bold text-white">
+                  <div className="mt-1 text-l text-white">
                     Ethnicity : {member.ethnicity}
                   </div>
                   {/* <p className="text-base text-gray-400 font-normal">{member.ethnicity}</p> */}
 
-                  <div className="mt-1 text-l font-bold text-white">
+                  <div className="mt-1 text-l text-white">
                     Roles : {member.roles.join(', ')}
                   </div>
                   {/* <p className="text-base text-gray-400 flex justify-center font-normal">{member.roles.join(', ')}</p> */}
@@ -500,7 +503,7 @@ export const Project = () => {
               </div>
             ))}
           </div>
-        </div>
+
 
 
                     </div>

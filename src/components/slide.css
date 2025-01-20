@@ -1,12 +1,12 @@
 /* The container for the arrows */
 .slider-controler {
     position: fixed; /* Fixed position on the screen */
-    top: 90%; /* Center vertically */
+    top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Adjust for perfect centering */
     display: flex; /* Flexbox layout to place the arrows side by side */
     align-items: center; /* Vertically center the arrows */
-    gap: 20px; /* Space between the arrows */
+    gap: 300px; /* Space between the arrows */
     z-index: 9999; /* Ensure they are on top */
 }
 
