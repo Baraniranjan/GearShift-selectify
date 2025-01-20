@@ -40,11 +40,82 @@ import { Dropdown, Header, Footer } from "./index"
 //   );
 // };
 
+// const CardDetailModal = ({ member, onClose }) => {
+//   return (
+//     <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
+//       <div className="bg-white p-6 rounded-lg w-4/5 max-w-4xl h-96 flex">
+    
+//         <div className="flex-shrink-0 flex flex-col items-center justify-center w-1/3">
+//           <img
+//             className="object-center object-cover rounded-full h-48 w-48 border-4 border-white shadow-lg"
+//             src={member.image_path}
+//             alt={member.name}
+//           />
+//           <p className="mt-4 text-xl font-bold text-center">{member.name}</p>
+//           <p className="text-lg text-gray-500 text-center">{member.role}</p>
+//         </div>
+
+//         <div className="flex-grow overflow-y-auto px-6">
+//           <h2 className="text-xl font-bold mb-4">Details</h2>
+//           <div className="space-y-3">
+//             <p><strong>Gender:</strong> {member.gender}</p>
+//             <p><strong>Experience:</strong> {member.experience}</p>
+//             <p><strong>Ethnicity:</strong> {member.ethnicity}</p>
+//             <p><strong>Location:</strong> {member.location}</p>
+//             <p><strong>Awards:</strong> {member.awards}</p>
+//             <p><strong>Roles:</strong> {member.roles.join(', ')}</p>
+//             <p><strong>Skills:</strong> {member.skills.join(', ')}</p>
+//           </div>
+//         </div>
+
+//         {/* Close Button */}
+//         {/* <div className="absolute top-4 right-4">
+//           <button
+//             className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-700"
+//             onClick={onClose}
+//           >
+//             Close
+//           </button>
+//         </div> */}
+//          <div className="mt-4 flex justify-center">
+//       <button
+//         className="px-6 py-2 bg-red-500 text-white rounded-md hover:bg-red-700"
+//         onClick={onClose}
+//       >
+//         Close
+//       </button>
+//     </div>
+//       </div>
+//     </div>
+//   );
+// };
+
 const CardDetailModal = ({ member, onClose }) => {
   return (
     <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white p-6 rounded-lg w-4/5 max-w-4xl h-96 flex">
-    
+      <div className="bg-white p-6 rounded-lg w-4/5 max-w-4xl flex relative">
+
+        {/* Close Button (X at the top-right corner) */}
+        <button
+          className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+          onClick={onClose}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+
         <div className="flex-shrink-0 flex flex-col items-center justify-center w-1/3">
           <img
             className="object-center object-cover rounded-full h-48 w-48 border-4 border-white shadow-lg"
@@ -55,7 +126,7 @@ const CardDetailModal = ({ member, onClose }) => {
           <p className="text-lg text-gray-500 text-center">{member.role}</p>
         </div>
 
-        <div className="flex-grow overflow-y-auto px-6">
+        <div className="flex-grow px-6">
           <h2 className="text-xl font-bold mb-4">Details</h2>
           <div className="space-y-3">
             <p><strong>Gender:</strong> {member.gender}</p>
@@ -67,24 +138,6 @@ const CardDetailModal = ({ member, onClose }) => {
             <p><strong>Skills:</strong> {member.skills.join(', ')}</p>
           </div>
         </div>
-
-        {/* Close Button */}
-        {/* <div className="absolute top-4 right-4">
-          <button
-            className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-700"
-            onClick={onClose}
-          >
-            Close
-          </button>
-        </div> */}
-         <div className="mt-4 flex justify-center">
-      <button
-        className="px-6 py-2 bg-red-500 text-white rounded-md hover:bg-red-700"
-        onClick={onClose}
-      >
-        Close
-      </button>
-    </div>
       </div>
     </div>
   );
@@ -312,7 +365,7 @@ const SearchPage = () => {
       }}
     >
       <Header className="mb-1" />
-      <Section className="max-w-7xl mx-auto px-4 lg:px-10 py-12 mt-1">
+      <Section className="max-w-7xl mx-auto lg:py-20 px-4 lg:px-10 py-12 mt-1">
         {/* <div className="flex flex-row gap-4 justify-center">
       {filterData.map((filter, index) => (
             <div className="flex ">
@@ -375,12 +428,18 @@ const SearchPage = () => {
         <div className="mt-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10" >
             {filteredData.map((member, index) => (
-              <div key={index} className="w-full bg-black rounded-lg shadow-lg p-8 flex flex-col justify-between h-full cursor-pointer" onClick={() => handleCardClick(member)}>
+              <div key={index} className="w-full bg-black rounded-lg shadow-lg p-8 flex flex-col justify-between h-full cursor-pointer relative" onClick={() => handleCardClick(member)}>
 
-                <div className={`absolute top-0 right-0 w-16 h-16 rounded-bl-full flex justify-center items-center 
-                            ${member.score > 80 ? 'bg-green-800' : 'bg-orange-800'} text-white text-xl font-bold`}>
-                  {member.score}
-                </div>
+<div
+          className={`absolute top-0 right-0 w-16 h-16 rounded-bl-full flex justify-center items-center 
+                      ${member.score > 80 ? 'bg-green-800' : 'bg-orange-800'} text-white text-xl font-bold`}
+        //   style={{
+        //     clipPath: 'polygon(100% 0, 0 0, 0 100%)', // Creates the quarter-circle shape
+        //   }}
+        style={{ borderBottomLeftRadius: '100%' }}
+        >
+          {member.score}
+        </div>
 
                 <div className="mb-6 flex justify-center">
                   <img
