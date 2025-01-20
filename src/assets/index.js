@@ -136,6 +136,17 @@ import vfxartist from "./VFXartist.jfif";
 import voice from "./Voice.jfif";
 import robotChair from "./robot_chair.png";
 
+import muthu from "./muthu-san.png";
+import venky from "./venky.png";
+import anumaam from "./anu_maam.png";
+import owl1 from "./bird1.png";
+import owl2 from "./bird2.png";
+import owl3 from "./bird3.png";
+import owl4 from "./bird4.png";
+import owl5 from "./TranslatorBird.png";
+import owl6 from "./RecommendationBird.png";
+
+
 export {
   brainwave,
   SelectifyLogo,
@@ -261,4 +272,13 @@ export {
   vfxartist,
   voice,
   robotChair,
+  owl1,
+  owl2,
+  owl3,
+  owl4,
+  owl5,
+  owl6,
+  muthu,
+  venky,
+  anumaam
 };

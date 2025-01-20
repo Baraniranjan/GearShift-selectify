@@ -9,7 +9,10 @@ import { Contact, StarsCanvas } from "./components";
 import Pricing from "./components/Pricing";
 import Roadmap from "./components/Roadmap";
 import Services from "./components/Services";
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
+import Testimonials from "./components/testimonials/Testimonials"
+import HeroComp from "./components/HeroComp";
+import Slide from "./components/Slide";
 
 const App = () => {
   return (

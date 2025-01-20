@@ -10,6 +10,12 @@ import NotFoundPage from "./pages/NotFoundPage.jsx";
 import { FindTalent, FindJobs,Summarize,Tools,ToolsData } from "./components/index.js";
 import PostAJob from "./components/PostAJob.jsx";
 import SearchResults from "./components/SearchResults.jsx";
+import {
+  LearnMore,
+  IdentifyRoles,
+  ScreenProfiles,
+  SummarizeData,
+  IdentifyData} from "./components/index.js";
 
 
 const router = createBrowserRouter(
@@ -68,7 +74,19 @@ const router = createBrowserRouter(
     {
       path:"/find-roles",
       element:<ToolsData/>
-    }
+    },
+    {
+      path:"/tools/learn-more",
+      element:<LearnMore/>
+    },
+    {
+      path: "/tools/identify-roles",
+      element: <IdentifyRoles />
+    },
+    {
+      path:"/identify-data",
+      element:<IdentifyData/>
+    },
  
   ]
 )

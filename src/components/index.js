@@ -14,7 +14,7 @@ import { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas } from './canvas'
 import Navbar from "./Navbar";
 import Tech from "./Tech";
 import Experience from "./Experience";
-import Works from "./Works";
+
 import Feedbacks from "./Feedbacks";
 import Contact from "./Contact";
 import CanvasLoader from "./Loader";
@@ -25,6 +25,12 @@ import ToolsData from "./ToolsData.jsx";
 import HeroSearch from "./HeroSearch.jsx";
 import GetStarted from "./GetStarted.jsx";
 import {Project} from "./Project.jsx";
+import LearnMore from "./LearnMore.jsx"
+import IdentifyRoles from "./IdentifyRoles.jsx";
+import ScreenProfiles from "./ScreenProfiles.jsx";
+import SummarizeData from "./SummarizeData.jsx";
+import IdentifyData from "./IdentifyData.jsx";
+
 
 export {
     Header,
@@ -44,7 +50,6 @@ export {
     Navbar,
     Tech,
     Experience,
-    Works,
     Feedbacks,
     Contact,
     CanvasLoader,
@@ -56,5 +61,10 @@ export {
     Tools,
     HeroSearch,
     GetStarted,
-    Project
+    Project,
+    LearnMore,
+    IdentifyRoles,
+    ScreenProfiles,
+    SummarizeData,
+    IdentifyData
 }
