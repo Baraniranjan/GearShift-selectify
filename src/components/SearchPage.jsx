@@ -131,7 +131,7 @@ const CardDetailModal = ({ member, onClose }) => {
           <h2 className="text-xl font-bold mb-4">Details</h2>
           <div className="space-y-3">
             <p><strong>Gender:</strong> {member.gender}</p>
-            <p><strong>Experience:</strong> {member.experience}</p>
+            <p><strong>Experience:</strong> {member.experience} years</p>
             <p><strong>Ethnicity:</strong> {member.ethnicity}</p>
             <p><strong>Location:</strong> {member.location}</p>
             <p><strong>Awards:</strong> {member.awards}</p>
