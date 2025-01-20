@@ -6,30 +6,71 @@ import { filterData } from "../constants";
 import Section from "./Section"
 import { Dropdown, Header, Footer } from "./index"
 
+// const CardDetailModal = ({ member, onClose }) => {
+//   return (
+//     <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
+//       <div className="bg-white p-6 rounded-lg w-96">
+//         <div className="text-center mb-6">
+//           <img
+//             className="object-center object-cover rounded-full h-48 w-48 border-4 border-white shadow-lg mx-auto"
+//             src={member.image_path}
+//             alt={member.name}
+//           />
+//           <p className="text-2xl font-bold">{member.name}</p>
+//           <p className="text-lg text-gray-500">{member.role}</p>
+//         </div>
+//         <div className="space-y-4">
+//           <p><strong>Title:</strong> {member.title}</p>
+//           <p><strong>Gender:</strong> {member.gender}</p>
+//           <p><strong>Ethnicity:</strong> {member.ethnicity}</p>
+//           <p><strong>Location:</strong> {member.location}</p>
+//           <p><strong>Roles:</strong> {member.roles.join(', ')}</p>
+//           <p><strong>Skills:</strong> {member.skills}</p>
+//         </div>
+//         <div className="mt-6 flex justify-center">
+//           <button
+//             className="px-6 py-2 bg-red-500 text-white rounded-md hover:bg-red-700"
+//             onClick={onClose}
+//           >
+//             Close
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
 const CardDetailModal = ({ member, onClose }) => {
   return (
     <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white p-6 rounded-lg w-96">
-        <div className="text-center mb-6">
+      <div className="bg-white p-6 rounded-lg w-4/5 max-w-4xl h-96 flex">
+    
+        <div className="flex-shrink-0 flex flex-col items-center justify-center w-1/3">
           <img
-            className="object-center object-cover rounded-full h-48 w-48 border-4 border-white shadow-lg mx-auto"
+            className="object-center object-cover rounded-full h-48 w-48 border-4 border-white shadow-lg"
             src={member.image_path}
             alt={member.name}
           />
-          <p className="text-2xl font-bold">{member.name}</p>
-          <p className="text-lg text-gray-500">{member.role}</p>
+          <p className="mt-4 text-xl font-bold text-center">{member.name}</p>
+          <p className="text-lg text-gray-500 text-center">{member.role}</p>
         </div>
-        <div className="space-y-4">
-          <p><strong>Title:</strong> {member.title}</p>
-          <p><strong>Gender:</strong> {member.gender}</p>
-          <p><strong>Ethnicity:</strong> {member.ethnicity}</p>
-          <p><strong>Location:</strong> {member.location}</p>
-          <p><strong>Roles:</strong> {member.roles}</p>
-          <p><strong>Skills:</strong> {member.skills}</p>
+
+        <div className="flex-grow overflow-y-auto px-6">
+          <h2 className="text-xl font-bold mb-4">Details</h2>
+          <div className="space-y-3">
+            <p><strong>Title:</strong> {member.title}</p>
+            <p><strong>Gender:</strong> {member.gender}</p>
+            <p><strong>Ethnicity:</strong> {member.ethnicity}</p>
+            <p><strong>Location:</strong> {member.location}</p>
+            <p><strong>Roles:</strong> {member.roles.join(', ')}</p>
+            <p><strong>Skills:</strong> {member.skills.join(', ')}</p>
+          </div>
         </div>
-        <div className="mt-6 flex justify-center">
+
+        {/* Close Button */}
+        <div className="absolute top-4 right-4">
           <button
-            className="px-6 py-2 bg-red-500 text-white rounded-md hover:bg-red-700"
+            className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-700"
             onClick={onClose}
           >
             Close
