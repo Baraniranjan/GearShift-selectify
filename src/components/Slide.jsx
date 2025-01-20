@@ -19,6 +19,7 @@ import { owl1, owl2, owl3, owl4, owl5, owl6 } from '../assets'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import { Link } from 'react-router-dom'
+import './slide.css'
 
 const Slide = () => {
 

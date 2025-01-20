@@ -1,5 +1,6 @@
 import Section from "../Section";
 import "./testimonials.scss";
+//import "./testimonial.css";
 import { muthu,venky,anumaam } from "../../assets";
 
 export default function Testimonials() {

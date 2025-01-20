@@ -1,0 +1,29 @@
+/* The container for the arrows */
+.slider-controler {
+    position: fixed; /* Fixed position on the screen */
+    top: 90%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
+    display: flex; /* Flexbox layout to place the arrows side by side */
+    align-items: center; /* Vertically center the arrows */
+    gap: 20px; /* Space between the arrows */
+    z-index: 9999; /* Ensure they are on top */
+}
+
+/* Arrow button styles */
+.slider-controler div {
+    cursor: pointer;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    padding: 10px; /* Adjust size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(56, 47, 47, 0.8); /* Slightly transparent background */
+    transition: 0.3s ease;
+}
+
+.slider-controler div:hover {
+    border: 1px solid currentColor; /* Border color on hover */
+    background-color: rgb(107, 107, 107); /* Solid background on hover */
+}

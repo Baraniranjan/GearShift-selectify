@@ -1,0 +1,77 @@
+/* Style for the testimonial cards */
+.card {
+    position: relative;
+    width: 300px; /* or any width that suits you */
+    height: 400px; /* adjust the height as needed */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Hide the image portion that's outside the card */
+    margin: 20px; /* Space between cards */
+    transition: transform 0.3s ease;
+}
+
+/* For the featured cards */
+.card.featured {
+    transform: scale(1.05); /* Slightly scale up featured cards */
+}
+
+/* Image in the top part of the card */
+.card .top {
+    position: relative;
+    width: 100%;
+    height: 180px; /* Adjust the height of the top section where the image will appear */
+}
+
+.card .top img.user {
+    position: absolute;
+    top: -50%; /* Move the image up to make half of it outside the card */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%; /* Make the image larger */
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Ensure the image is above the other content */
+}
+
+/* Other images in the top section (like icons) */
+.card .top img.left,
+.card .top img.right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.card .top img.left {
+    left: 10px;
+}
+
+.card .top img.right {
+    right: 10px;
+}
+
+/* Center part of the card (description) */
+.card .center {
+    padding: 20px;
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Bottom part of the card (name and title) */
+.card .bottom {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #f1f1f1;
+}
+
+.card .bottom h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card .bottom h4 {
+    font-size: 1rem;
+    color: #777;
+}

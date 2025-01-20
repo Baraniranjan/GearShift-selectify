@@ -29,4 +29,32 @@
             }
         }
     }
+
+    // .slider-controler {
+    //     position: fixed; /* Position the controller fixed on the screen */
+    //     top: 50%; /* Center vertically */
+    //     left: 50%; /* Center horizontally */
+    //     transform: translate(-50%, -50%); /* Offset by 50% of its own size to truly center */
+    //     display: flex; /* Use flexbox to align arrows side by side */
+    //     align-items: center; /* Vertically center items */
+    //     justify-content: center; /* Horizontally center items */
+    //     gap: 20px; /* Space between the left and right arrows */
+    //     z-index: 9999; /* Ensure the arrows are on top of other content */
+    // }
+    
+    // .slider-controler div {
+    //     cursor: pointer;
+    //     border: 1px solid transparent;
+    //     border-radius: 50%;
+    //     padding: 2.5px 10px;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     transition: .3s ease;
+    // }
+    
+    // .slider-controler div:hover {
+    //     border: 1px solid currentColor;
+    //     transition: .3s ease;
+    // }
 }

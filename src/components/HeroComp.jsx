@@ -19,12 +19,14 @@ const HeroComp = () => {
             Hi, I'm <span className='text-[#AC6AFF]'>Jasko</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 mb-2 text-white-100`}>
-            Your local guide to the Selectify world <br className='sm:block hidden' />
+            Your local guide to the Selectify world
+            {/* <br className='sm:block hidden' /> */}
+            
           </p>
         </div>
+      <ComputersCanvas />
       </div>
 
-      <ComputersCanvas />
 
       {/* <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
         <a href='#about'>
