@@ -58,31 +58,31 @@ const CardDetailModal = ({ member, onClose }) => {
               src={member.image_path}
               alt={member.name}
             />
-            <p className="mt-4 text-xl font-bold text-center">{member.name}</p>
-            <p className="text-lg text-gray-500 text-center">{member.role}</p>
+            <p className="mt-4 text-xl font-bold text-center" style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}>{member.name}</p>
+            <p className="text-lg text-gray-500 text-center" style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}>{member.role}</p>
           </div>
   
           <div className="flex-grow overflow-y-auto px-6">
             <h2 className="text-xl font-bold mb-4">Details</h2>
             <div className="space-y-3">
-              <p className="text-black-important"><strong>Title:</strong> {member.title}</p>
-              <p><strong>Gender:</strong> {member.gender}</p>
-              <p><strong>Ethnicity:</strong> {member.ethnicity}</p>
-              <p><strong>Location:</strong> {member.location}</p>
-              <p><strong>Roles:</strong> {member.roles.join(', ')}</p>
-              <p><strong>Skills:</strong> {member.skills.join(', ')}</p>
+              <p style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}><strong>Title:</strong> {member.title}</p>
+              <p style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}><strong>Gender:</strong> {member.gender}</p>
+              <p style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}><strong>Ethnicity:</strong> {member.ethnicity}</p>
+              <p style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}><strong>Location:</strong> {member.location}</p>
+              <p style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}><strong>Roles:</strong> {member.roles.join(', ')}</p>
+              <p style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}><strong>Skills:</strong> {member.skills.join(', ')}</p>
             </div>
           </div>
   
           {/* Close Button */}
-          <div className="absolute top-4 right-4">
-            <button
-              className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-700"
-              onClick={onClose}
-            >
-              Close
-            </button>
-          </div>
+          <div className="mt-4 flex justify-center">
+      <button
+        className="px-6 py-2 bg-red-500 text-white rounded-md hover:bg-red-700"
+        onClick={onClose}
+      >
+        Close
+      </button>
+    </div>
         </div>
       </div>
     );
@@ -364,7 +364,7 @@ export const Project = () => {
             <p className="text-base text-gray-400 font-normal mb-2">{member.ethnicity}</p>
 
             <div className="mt-2 text-lg font-bold text-white">Roles</div>
-            <p className="text-base text-gray-400 flex justify-center font-normal mb-4">{member.roles}</p>
+            <p className="text-base text-gray-400 flex justify-center font-normal mb-4">{member.roles.join(', ')}</p>
         </div>
 
         <div className="flex gap-4 justify-center mt-4">

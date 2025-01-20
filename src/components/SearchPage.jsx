@@ -58,24 +58,33 @@ const CardDetailModal = ({ member, onClose }) => {
         <div className="flex-grow overflow-y-auto px-6">
           <h2 className="text-xl font-bold mb-4">Details</h2>
           <div className="space-y-3">
-            <p><strong>Title:</strong> {member.title}</p>
             <p><strong>Gender:</strong> {member.gender}</p>
+            <p><strong>Experience:</strong> {member.experience}</p>
             <p><strong>Ethnicity:</strong> {member.ethnicity}</p>
             <p><strong>Location:</strong> {member.location}</p>
+            <p><strong>Awards:</strong> {member.awards}</p>
             <p><strong>Roles:</strong> {member.roles.join(', ')}</p>
             <p><strong>Skills:</strong> {member.skills.join(', ')}</p>
           </div>
         </div>
 
         {/* Close Button */}
-        <div className="absolute top-4 right-4">
+        {/* <div className="absolute top-4 right-4">
           <button
             className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-700"
             onClick={onClose}
           >
             Close
           </button>
-        </div>
+        </div> */}
+         <div className="mt-4 flex justify-center">
+      <button
+        className="px-6 py-2 bg-red-500 text-white rounded-md hover:bg-red-700"
+        onClick={onClose}
+      >
+        Close
+      </button>
+    </div>
       </div>
     </div>
   );
@@ -302,8 +311,8 @@ const SearchPage = () => {
         zIndex: -1,
       }}
     >
-      <Header className="mb-0" />
-      <Section className="max-w-7xl mx-auto px-4 lg:px-10 py-12 mt-0">
+      <Header className="mb-1" />
+      <Section className="max-w-7xl mx-auto px-4 lg:px-10 py-12 mt-1">
         {/* <div className="flex flex-row gap-4 justify-center">
       {filterData.map((filter, index) => (
             <div className="flex ">
