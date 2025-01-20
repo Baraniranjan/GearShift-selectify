@@ -394,7 +394,8 @@ export const Project = () => {
                         <TrackVisibility>
                             {({ isVisible }) => (
                                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                                    <Row>
+                                    {/* <Row> */}
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                                         {
                                             projects.map((project, index) => (
                                                 <ProjectCard
@@ -404,7 +405,8 @@ export const Project = () => {
                                                 />
                                             ))
                                         }
-                                    </Row>
+                                        </div>
+                                    {/* </Row> */}
                                 </div>
                             )}
                         </TrackVisibility>
@@ -451,7 +453,7 @@ export const Project = () => {
 
             </div>
 
-            <div className="mt-10">
+            <div className="mt-10 px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10" id="filteredResults">
             {filteredData.map((member, index) => (
               <div key={index} className="w-full bg-black rounded-lg shadow-lg p-8 flex flex-col justify-between h-full cursor-pointer relative" onClick={() => handleCardClick(member)}>
