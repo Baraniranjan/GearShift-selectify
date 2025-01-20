@@ -47,11 +47,73 @@ import TrackVisibility from 'react-on-screen';
 //     );
 // };
 
+// const CardDetailModal = ({ member, onClose }) => {
+//     return (
+//       <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
+//         <div className="bg-white p-6 rounded-lg w-4/5 max-w-4xl h-96 flex">
+      
+//           <div className="flex-shrink-0 flex flex-col items-center justify-center w-1/3">
+//             <img
+//               className="object-center object-cover rounded-full h-48 w-48 border-4 border-white shadow-lg"
+//               src={member.image_path}
+//               alt={member.name}
+//             />
+//             <p className="mt-4 text-xl font-bold text-center" style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}>{member.name}</p>
+//             <p className="text-lg text-gray-500 text-center" style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}>{member.role}</p>
+//           </div>
+  
+//           <div className="flex-grow overflow-y-auto px-6">
+//             <h2 className="text-xl font-bold mb-4">Details</h2>
+//             <div className="space-y-3">
+//               <p style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}><strong>Title:</strong> {member.title}</p>
+//               <p style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}><strong>Gender:</strong> {member.gender}</p>
+//               <p style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}><strong>Ethnicity:</strong> {member.ethnicity}</p>
+//               <p style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}><strong>Location:</strong> {member.location}</p>
+//               <p style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}><strong>Roles:</strong> {member.roles.join(', ')}</p>
+//               <p style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}><strong>Skills:</strong> {member.skills.join(', ')}</p>
+//             </div>
+//           </div>
+  
+//           {/* Close Button */}
+//           <div className="mt-4 flex justify-center">
+//       <button
+//         className="px-6 py-2 bg-red-500 text-white rounded-md hover:bg-red-700"
+//         onClick={onClose}
+//       >
+//         Close
+//       </button>
+//     </div>
+//         </div>
+//       </div>
+//     );
+//   };
+
+
 const CardDetailModal = ({ member, onClose }) => {
     return (
       <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
-        <div className="bg-white p-6 rounded-lg w-4/5 max-w-4xl h-96 flex">
-      
+        <div className="bg-white p-6 rounded-lg w-4/5 max-w-4xl flex relative">
+  
+          <button
+            className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+            onClick={onClose}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+  
           <div className="flex-shrink-0 flex flex-col items-center justify-center w-1/3">
             <img
               className="object-center object-cover rounded-full h-48 w-48 border-4 border-white shadow-lg"
@@ -59,35 +121,25 @@ const CardDetailModal = ({ member, onClose }) => {
               alt={member.name}
             />
             <p className="mt-4 text-xl font-bold text-center" style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}>{member.name}</p>
-            <p className="text-lg text-gray-500 text-center" style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}>{member.role}</p>
+            <p className="text-lg text-gray-500 text-center"style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}>{member.role}</p>
           </div>
   
-          <div className="flex-grow overflow-y-auto px-6">
-            <h2 className="text-xl font-bold mb-4">Details</h2>
+          <div className="flex-grow px-6">
+            <h2 className="text-xl font-bold mb-4" style={{ color: '#000', fontSize: '24px', textAlign: 'left' }}>Details</h2>
             <div className="space-y-3">
-              <p style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}><strong>Title:</strong> {member.title}</p>
               <p style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}><strong>Gender:</strong> {member.gender}</p>
+              <p style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}><strong>Experience:</strong> {member.experience}</p>
               <p style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}><strong>Ethnicity:</strong> {member.ethnicity}</p>
               <p style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}><strong>Location:</strong> {member.location}</p>
+              <p style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}><strong>Awards:</strong> {member.awards}</p>
               <p style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}><strong>Roles:</strong> {member.roles.join(', ')}</p>
               <p style={{ color: '#000', fontSize: '16px', textAlign: 'left' }}><strong>Skills:</strong> {member.skills.join(', ')}</p>
             </div>
           </div>
-  
-          {/* Close Button */}
-          <div className="mt-4 flex justify-center">
-      <button
-        className="px-6 py-2 bg-red-500 text-white rounded-md hover:bg-red-700"
-        onClick={onClose}
-      >
-        Close
-      </button>
-    </div>
         </div>
       </div>
     );
   };
-
 export const Project = () => {
     const [category, setCategory] = useState("");
     const [userData, setUserData] = useState([]);
@@ -441,7 +493,7 @@ export const Project = () => {
                 {/* </div> */}
                       
 
-                <div className="mt-10">
+                {/* <div className="mt-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10" id="filteredResults">
             {filteredData.map((member, index) => (
               <div key={index} className="w-full bg-black rounded-lg shadow-lg p-8 flex flex-col justify-between h-full cursor-pointer relative" onClick={() => handleCardClick(member)}>
@@ -480,6 +532,66 @@ export const Project = () => {
                     Roles
                   </div>
                   <p className="text-base text-gray-400 flex justify-center font-normal">{member.roles}</p>
+                </div>
+
+                <div className="flex gap-6 justify-center mt-6">
+                  <button className="flex px-3 py-2 bg-gray-600 text-white font-semibold rounded-md hover:bg-gray-800 transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+                    </svg>
+                    <button className="ml-1">Email</button>
+                  </button>
+                  <button className="flex items-center px-4 py-2 bg-purple-400 text-white font-semibold rounded-md hover:bg-purple-800 transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 7l9 5 9-5v12H3V7z" />
+                    </svg>
+                    <button className="ml-2">Add to Movie</button>
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div> */}
+
+<div className="mt-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10" id="filteredResults">
+            {filteredData.map((member, index) => (
+              <div key={index} className="w-full bg-black rounded-lg shadow-lg p-8 flex flex-col justify-between h-full cursor-pointer relative" onClick={() => handleCardClick(member)}>
+
+<div
+          className={`absolute top-0 right-0 w-16 h-16 rounded-bl-full flex justify-center items-center 
+                      ${member.score > 80 ? 'bg-green-800' : 'bg-orange-800'} text-white text-xl font-bold`}
+        //   style={{
+        //     clipPath: 'polygon(100% 0, 0 0, 0 100%)', // Creates the quarter-circle shape
+        //   }}
+        style={{ borderBottomLeftRadius: '100%' }}
+        >
+          {member.score}
+        </div>
+
+                <div className="mb-6 flex justify-center">
+                  <img
+                    className="object-center object-cover rounded-full h-48 w-48 border-4 border-white shadow-lg"
+                    src={member.image_path}
+                    alt={member.name}
+                  />
+                </div>
+                <div className="text-center flex flex-col justify-between h-full">
+                  <p className="text-l text-white font-bold mb-1">{member.name}</p>
+                  <p className="text-base text-gray-400 font-normal">{member.location}</p>
+                  <p className="text-base text-gray-400 font-normal mb-1">{member.role}</p>
+                  <p className="text-base text-gray-400 font-normal mb-1">{member.experience} years</p>
+                  <p className="text-xl text-white font-normal mb-1">{member.title}</p>
+
+                  <div className="mt-1 text-l font-bold text-white">
+                    Ethnicity : {member.ethnicity}
+                  </div>
+                  {/* <p className="text-base text-gray-400 font-normal">{member.ethnicity}</p> */}
+
+                  <div className="mt-1 text-l font-bold text-white">
+                    Roles : {member.roles.join(', ')}
+                  </div>
+                  {/* <p className="text-base text-gray-400 flex justify-center font-normal">{member.roles.join(', ')}</p> */}
                 </div>
 
                 <div className="flex gap-6 justify-center mt-6">

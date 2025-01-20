@@ -456,14 +456,14 @@ const SearchPage = () => {
                   <p className="text-xl text-white font-normal mb-1">{member.title}</p>
 
                   <div className="mt-1 text-l font-bold text-white">
-                    Ethnicity
+                    Ethnicity : {member.ethnicity}
                   </div>
-                  <p className="text-base text-gray-400 font-normal">{member.ethnicity}</p>
+                  {/* <p className="text-base text-gray-400 font-normal">{member.ethnicity}</p> */}
 
                   <div className="mt-1 text-l font-bold text-white">
-                    Roles
+                    Roles : {member.roles.join(', ')}
                   </div>
-                  <p className="text-base text-gray-400 flex justify-center font-normal">{member.roles}</p>
+                  {/* <p className="text-base text-gray-400 flex justify-center font-normal">{member.roles.join(', ')}</p> */}
                 </div>
 
                 <div className="flex gap-6 justify-center mt-6">
