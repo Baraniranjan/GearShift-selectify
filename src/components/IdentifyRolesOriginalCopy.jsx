@@ -113,7 +113,7 @@ function IdentifyRoles() {
                         onClick={handleClick}
                         className="px-8 py-4 bg-gradient-to-r from-blue-800 to-purple-500 text-white font-semibold rounded-full transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50"
                     >
-                        Fetch Roles
+                        Fetch and Show Table Data
                     </button>
 
  
@@ -140,90 +140,23 @@ function IdentifyRoles() {
             <table className="table-auto w-full border-collapse border border-gray-300">
               <thead>
                 <tr className="bg-black">
+                  <th className="border border-gray-300 px-4 py-2 text-left">Age</th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">Gender</th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">Location</th>
                   <th className="border border-gray-300 px-4 py-2 text-left">Roles</th>
                   <th className="border border-gray-300 px-4 py-2 text-left">Script Context</th>
                   <th className="border border-gray-300 px-4 py-2 text-left">Description</th>
-                  <th className="border border-gray-300 px-4 py-2 text-left">Profile</th>
                 </tr>
               </thead>
               <tbody>
                 {summary.map((item, index) => (
                   <tr key={index} className="hover:bg-gray-900">
-                    {/* <td className="border border-gray-300 px-2 py-2">
-                      <p>{item.roles}</p>
-                      <p>{item.age}</p></td>
-                    <td className="border border-gray-300 px-2 py-2">{item.script_context}</td>
-                    <td className="border border-gray-300 px-2 py-2">{item.description}</td>
-                    <td className="border border-gray-300 px-2 py-2">
-                      <div className="flex p-4 justify-start"> 
-                        <div className="flex flex-col items-center">
-                          <img
-                            src={item.imgUrl}
-                            alt="Profile 1"
-                            className="w-16 h-16 rounded-full object-cover mb-2"
-                          />
-                          <p>{item.name1}</p>
-                        </div>
-                        <div className="flex flex-col items-center ">
-                          <img
-                            src={item.imgUrl}
-                            alt="Profile 2"
-                            className="w-16 h-16 rounded-full object-cover mb-2"
-                          />
-                          <p>{item.name2}</p>
-                        </div>
-                        <div className="flex flex-col items-center ">
-                          <img
-                            src={item.imgUrl}
-                            alt="Profile 3"
-                            className="w-16 h-16 rounded-full object-cover mb-2"
-                          />
-                          <p>{item.name3}</p>
-                        </div>
-                      </div>
-                    </td> */}
-                    <td className="border border-gray-300 px-4 py-2 w-1/4">
-                        <p>{item.roles}</p>
-                        <p>{item.age}</p>
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2 w-1/4">{item.script_context}</td>
-                      <td className="border border-gray-300 px-4 py-2 w-1/4">{item.description}</td>
-                      
-                      <td className="border border-gray-300 px-4 py-2 w-1/4">
-                        <div className="flex justify-between space-x-4">
-                          {/* Profile 1 */}
-
-                            <div className="flex flex-col items-center">
-                              <img
-                                src={item.imgUrl} // Access the first image in the array
-                                alt="Profile 1"
-                                className="w-16 h-16 rounded-full object-cover mb-2"
-                              />
-                              <p>hi</p>
-                            </div>
-
-
-                            <div className="flex flex-col items-center">
-                              <img
-                                src={item.imgUrl} // Access the second image in the array
-                                alt="Profile 2"
-                                className="w-16 h-16 rounded-full object-cover mb-2"
-                              />
-                              <p>{item.name2}</p>
-                            </div>
-
-
-                          {/* Profile 3 */}
-                            <div className="flex flex-col items-center">
-                              <img
-                                src={item.imgUrl} // Access the third image in the array
-                                alt="Profile 3"
-                                className="w-16 h-16 rounded-full object-cover mb-2"
-                              />
-                              <p>{item.name3}</p>
-                            </div>
-                        </div>
-                      </td>
+                    <td className="border border-gray-300 px-4 py-2">{item.age}</td>
+                    <td className="border border-gray-300 px-4 py-2">{item.gender}</td>
+                    <td className="border border-gray-300 px-4 py-2">{item.location}</td>
+                    <td className="border border-gray-300 px-4 py-2">{item.roles}</td>
+                    <td className="border border-gray-300 px-4 py-2">{item.script_context}</td>
+                    <td className="border border-gray-300 px-4 py-2">{item.description}</td>
                   </tr>
                 ))}
               </tbody>

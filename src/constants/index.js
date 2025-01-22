@@ -1,4 +1,12 @@
 import {
+  tom,
+  tom1,
+  tom2,
+  tom3,
+  tom4,
+  tom5,
+  emma,
+  emma1,
   benefitIcon1,
   benefitIcon2,
   benefitIcon3,
@@ -386,6 +394,7 @@ export const summary = [
     gender : "Male",
     location : "Small village at the base of a giant waterfall, later Mahishmati",
     roles : "Lead Actor",
+    imgUrl: tom,
     description : "Shivudu is adventurous, curious, and initially unaware of his royal lineage. He is physically strong and agile, with a keen sense of justice and a deep love for exploration. His journey is one of self-discovery and heroism.",
     script_context : "Shivudu is the protagonist who discovers his true identity as the son of Amarendra Baahubali and Devasena. His quest is to seek justice for his father's murder and restore the rightful rule of Mahishmati."
   },
@@ -394,6 +403,7 @@ export const summary = [
     gender : "Female",
     location : "Mahishmati",
     roles : "Supporting Actor",
+    imgUrl: tom,
     description : "Avanthika is a fierce and skilled warrior, part of a rebel group fighting against the tyrannical rule of Bhallaladeva. She is determined, strong-willed, and deeply committed to her mission. Her relationship with Shivudu is transformative, adding depth to her character.",
     script_context : "Avanthika is a warrior who becomes Shivudu's love interest. She reveals the mission to rescue Devasena and plays a crucial role in Shivudu's journey."
   },
@@ -402,6 +412,7 @@ export const summary = [
     gender : "Female",
     location : "Mahishmati",
     roles : "Supporting Actor",
+    imgUrl: tom,
     description : "Sivagami is a powerful and authoritative figure, the queen mother who holds significant influence in the kingdom. She is wise and protective, especially of her family, but her decisions have far-reaching consequences.",
     script_context : "Sivagami is the mother of Shivudu and the queen mother who initially hides Shivudu's true identity. Her choice of Amarendra over Bhallaladeva as king sets off a chain of events leading to the central conflict."
   },
@@ -410,32 +421,36 @@ export const summary = [
     gender : "Female",
     location : "Mahishmati",
     roles : "Supporting Actor",
-    description : "Devasena is a strong, independent, and free-spirited princess who values her freedom. She is skilled in combat and has a fierce personality. Her love story with Amarendra Baahubali is central to the plot.",
-    script_context : "Devasena is initially a princess who falls in love with Amarendra Baahubali. She becomes a central figure in the conflict as she is imprisoned by Bhallaladeva, and her rescue is a key part of the plot."
+    imgUrl: tom,
+    description : "Devasena is a strong, independent, and free-spirited princess who values her freedom. ",
+    script_context : "Devasena is initially a princess who falls in love with Amarendra Baahubali."
   },
   {
     age : "30s",
     gender : "Male",
     location : "Mahishmati",
     roles : "Villain",
-    description : "Bhallaladeva is ambitious, ruthless, and power-hungry. He is physically imposing and skilled in combat, but his true strength lies in his cunning and manipulative nature. His jealousy and resentment drive him to betray his cousin, Amarendra.",
-    script_context : "Bhallaladeva is the primary antagonist who plots against Amarendra Baahubali to seize the throne of Mahishmati. His actions lead to Amarendra's death and his own rise to power."
+    imgUrl: tom,
+    description : "Bhallaladeva is ambitious, ruthless, and power-hungry.",
+    script_context : "Bhallaladeva is the primary antagonist who plots against Amarendra Baahubali to seize the throne of Mahishmati. "
   },
   {
     age : "60s",
     gender : "Male",
     location : "Mahishmati",
     roles : "Supporting Actor",
-    description : "Bijjaladeva is a manipulative and scheming figure, the father of Bhallaladeva. He harbors deep resentment and jealousy, and he uses his influence to push his son towards betrayal and treachery.",
-    script_context : "Bijjaladeva is the father of Bhallaladeva and plays a crucial role in manipulating events to ensure his son's ascension to the throne. His machinations are central to the plot's conflict."
+    imgUrl: tom,
+    description : "Bijjaladeva is a manipulative and scheming figure, the father of Bhallaladeva. ",
+    script_context : "Bijjaladeva is the father of Bhallaladeva and plays a crucial role in manipulating events to ensure his son's ascension to the throne."
   },
   {
     age : "30s",
     gender : "Male",
     location : "Mahishmati",
     roles : "Lead Actor",
-    description : "Amarendra Baahubali is a legendary warrior and a beloved leader. He is brave, compassionate, and fair, embodying the ideals of a true king. His charisma and leadership earn him the love and loyalty of his people.",
-    script_context : "Amarendra Baahubali is the elder son of King Bijjaladeva and the rightful heir to the throne. His story is told through flashbacks, and his murder sets the stage for the central conflict of the film."
+    imgUrl: tom,
+    description : "Amarendra Baahubali is a legendary warrior and a beloved leader.",
+    script_context : "Amarendra Baahubali is the elder son of King Bijjaladeva and the rightful heir to the throne. "
   },
 ];
 

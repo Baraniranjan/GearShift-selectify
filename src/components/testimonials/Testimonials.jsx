@@ -7,8 +7,8 @@ export default function Testimonials() {
   const data = [
     {
       id: 1,
-      name: "Tom Durden",
-      title: "Senior Developer",
+      name: "-Muthu Productions",
+      title: "Producer",
       img: muthu,
       icon: "assets/twitter.png",
       desc:
@@ -16,8 +16,8 @@ export default function Testimonials() {
     },
     {
       id: 2,
-      name: "Alex Kalinski",
-      title: "Co-Founder of DELKA",
+      name: "-Anu Pictures",
+      title: "Producer",
       img: anumaam,
       icon: "assets/youtube.png",
       desc:
@@ -26,8 +26,8 @@ export default function Testimonials() {
     },
     {
       id: 3,
-      name: "Martin Harold",
-      title: "CEO of ALBI",
+      name: "-Venky Studios",
+      title: "Co-Producer",
       img: venky,
       icon: "assets/linkedin.png",
       desc:

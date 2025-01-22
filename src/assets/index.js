@@ -135,8 +135,35 @@ import owl3 from "./bird3.png";
 import owl4 from "./bird4.png";
 import owl5 from "./TranslatorBird.png";
 import owl6 from "./RecommendationBird.png";
+ 
+import actorjob from "./actorjob.jfif";
+import actressjob from "./actressjob.jpg";
+import singerjob from "./singerjob.jpg";
+import dancerjob from "./dancerjob.jpg";
+import camerajob from "./camerajob.jpg";
+import actress2job from "./actress2job.jpg";
+import actor2job from "./actor2job.jpg";
+import voicejob from "./voicejob.jpg";
+
+import tom from "./actors/tom cruizeeeeeeee.jfif";
+import tom1 from "./actors/bradpittttttt.jfif";
+import tom2 from "./actors/cilian murphy.jfif";
+import tom3 from "./actors/downey.jfif";
+import tom4 from "./actors/hemsworthhh.jfif";
+import tom5 from "./actors/holland.jfif";
+
+import emma from "./actors/emmastone.jfif";
+import emma1 from "./actors/aniston madam.jfif";
 
 export {
+  tom,
+  tom1,
+  tom2,
+  tom3,
+  tom4,
+  tom5,
+  emma,
+  emma1,
   brainwave,
   SelectifyLogo,
   SelectifyTabLogo,
@@ -258,5 +285,13 @@ export {
   owl3,
   owl4,
   owl5,
-  owl6
+  owl6,
+  actorjob,
+  actressjob,
+  singerjob,
+  dancerjob,
+  camerajob,
+  actress2job,
+  actor2job,
+  voicejob,
 };
