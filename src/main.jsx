@@ -15,7 +15,8 @@ import {
   IdentifyRoles,
   ScreenProfiles,
   SummarizeData,
-  IdentifyData} from "./components/index.js";
+  IdentifyData,
+  ScreenProfileTable} from "./components/index.js";
 
 
 const router = createBrowserRouter(
@@ -86,6 +87,14 @@ const router = createBrowserRouter(
     {
       path:"/identify-data",
       element:<IdentifyData/>
+    },
+    {
+      path: "/tools/screen-profiles",
+      element: <ScreenProfiles />
+    },
+    ,{
+      path:"/screenprofile-data",
+      element:<ScreenProfileTable/>
     },
  
   ]

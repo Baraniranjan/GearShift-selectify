@@ -1,91 +1,79 @@
-import React, { useState } from 'react';
+import { summary } from "../constants";
+import { useState } from "react";
+import { useEffect } from "react";
+import Header from "./Header";
+import { Link } from "react-router-dom";
 
-export default function ScreenProfileTable({ data }) {
-  return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold mb-6">Profiles Based on Roles</h1>
-      
+export default function ScreenProfileTable() {
+
+	// const [summerizeData,setSummerizeData] = useState('');
+	// useEffect(() => {
+    // const fetchData = async () => {
+	// 		try {
+         
+	// 			const response = await fetch("http://localhost:5173/summarize-data");
+	// 			console.log('res',response);
+	// 			const data = await response.json();
+	// 			console.log('fdata',data);
+	// 			setUserData(data);
+	// 			setFilteredData(data);
+	// 		} catch (error) {
+	// 			console.error('Error fetching data:', error);
+	// 		}
+
+	// 	}
+
+	// }, []);
+  const [showData, setShowData] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowData(true);  // This will trigger rendering of <IdentifyData /> after 2 seconds
+    }, 2000);
+
+    // Cleanup timeout if the component is unmounted before the timer finishes
+    return () => clearTimeout(timer);
+  }, []);
+
+	return (
+		<>
+    <div>
+      <Header/>
+    </div>
+		<div className="p-8 mt-16">
+      <h1 className="text-2xl font-bold mb-6">Matching Profiles for the Characters</h1>
       <div className="overflow-auto">
-        <table className="table-auto w-full border-collapse border border-gray-300">
+        <table className="w-full table-auto border-collapse border border-gray-900">
           <thead>
-            <tr className="bg-gray-200">
-              <th className="border border-gray-300 px-4 py-2 text-left">Name</th>
+            <tr className="bg-gray-900">
               <th className="border border-gray-300 px-4 py-2 text-left">Age</th>
               <th className="border border-gray-300 px-4 py-2 text-left">Gender</th>
               <th className="border border-gray-300 px-4 py-2 text-left">Location</th>
               <th className="border border-gray-300 px-4 py-2 text-left">Roles</th>
+              <th className="border border-gray-300 px-4 py-2 text-left">Script Context</th>
               <th className="border border-gray-300 px-4 py-2 text-left">Description</th>
-              <th className="border border-gray-300 px-4 py-2 text-left">Profiles</th>
             </tr>
           </thead>
           <tbody>
-            {data.map((item, index) => (
-              <tr key={index} className="hover:bg-gray-100">
-                <td className="border border-gray-300 px-4 py-2">{item.name}</td>
+            {summary.map((item, index) => (
+              <tr key={index} className="bg-gray-900">
                 <td className="border border-gray-300 px-4 py-2">{item.age}</td>
                 <td className="border border-gray-300 px-4 py-2">{item.gender}</td>
                 <td className="border border-gray-300 px-4 py-2">{item.location}</td>
                 <td className="border border-gray-300 px-4 py-2">{item.roles}</td>
+                <td className="border border-gray-300 px-4 py-2">{item.script_context}</td>
                 <td className="border border-gray-300 px-4 py-2">{item.description}</td>
-                <td className="border border-gray-300 px-4 py-2">
-                  {/* Display Profiles as Cards */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {item.profiles.length > 0 ? (
-                      item.profiles.map((profile, profileIndex) => (
-                        <div
-                          key={profileIndex}
-                          className="p-4 bg-gray-100 rounded shadow-md"
-                        >
-                          <h3 className="font-bold">{profile.name}</h3>
-                          <p>Role: {profile.role}</p>
-                          <p>Location: {profile.location}</p>
-                        </div>
-                      ))
-                    ) : (
-                      <p>No profiles available</p>
-                    )}
-                  </div>
-                </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      <Link to="/tools">
+        <button className="mt-4 px-8 py-4 bg-gradient-to-r from-blue-800 to-purple-500 text-white font-semibold rounded-full transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50">
+          Back to Tools
+        </button>
+      </Link>
     </div>
-  );
+		</>
+	);
 }
-
-// export default function App() {
-//   // Example data
-//   const data = [
-//     {
-//       name: 'Shivudu',
-//       age: 'Mid 20s',
-//       gender: 'Male',
-//       location: 'Small village at the base of a giant waterfall',
-//       roles: 'Lead Actor',
-//       description:
-//         'Shivudu is adventurous, curious, and unaware of his past. He is physically strong and determined, with a sense of justice and bravery. His journey is one of self-discovery and heroism.',
-//       script_context:
-//         'Shivudu is the protagonist who discovers his true identity as the son of Amarendra Baahubali and seeks to restore justice in the kingdom of Mahishmati.',
-//       profiles: [
-//         { name: 'Character A', role: 'Warrior', location: 'Mahishmati' },
-//         { name: 'Character B', role: 'Advisor', location: 'Village Base' }
-//       ]
-//     },
-//     {
-//       name: 'Avanthika',
-//       age: 'Mid 20s',
-//       gender: 'Female',
-//       location: 'Mahishmati',
-//       roles: 'Supporting Actor',
-//       description:
-//         'Avanthika is a fierce and skilled warrior, part of a rebel group fighting against Bhallaladeva.',
-//       script_context:
-//         'Avanthika plays a crucial role in the rescue mission to free Devasena.',
-//       profiles: []
-//     }
-//   ];
-
-//   return <ProfileTable data={data} />;
-// }

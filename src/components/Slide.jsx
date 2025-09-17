@@ -77,7 +77,7 @@ const Slide = () => {
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link to="/screen-profiles">
+                    <Link to="/tools/screen-profiles">
                         <img src={owl4} alt="burger" />
                         <div className='text-center mt-3 text-4xl'>
                             <h2 className='font-bangers'>Script Scout</h2>

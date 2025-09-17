@@ -7,31 +7,31 @@ export default function Testimonials() {
   const data = [
     {
       id: 1,
-      name: "Tom Durden",
-      title: "Senior Developer",
+      name: "Muthu Productions",
+      title: "Senior Producer",
       img: muthu,
       icon: "assets/twitter.png",
       desc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat magnam dolorem.",
+        "Selectify is not just a tool—it’s a must-have partner for any production house looking to discover exceptional talent!",
     },
     {
       id: 2,
-      name: "Alex Kalinski",
-      title: "Co-Founder of DELKA",
+      name: "Anu Pictures",
+      title: "Co-Founder of AP",
       img: anumaam,
       icon: "assets/youtube.png",
       desc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat magnam dolorem recusandae perspiciatis ducimus vel hic temporibus. ",
+        "Selectify is truly a game-changer for the industry, and we can't imagine working without it!",
       featured: true,
     },
     {
       id: 3,
-      name: "Martin Harold",
-      title: "CEO of ALBI",
+      name: "Venky Studios",
+      title: "CEO of SPE",
       img: venky,
       icon: "assets/linkedin.png",
       desc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat magnam dolorem",
+        "Thanks to Selectify, we’ve cast some of the best performers for our recent projects. It’s truly an indispensable tool for modern production houses!",
     },
   ];
   return (

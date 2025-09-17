@@ -145,9 +145,21 @@ import owl3 from "./bird3.png";
 import owl4 from "./bird4.png";
 import owl5 from "./TranslatorBird.png";
 import owl6 from "./RecommendationBird.png";
+ 
+import actorjob from "./actorjob.jfif";
+import actressjob from "./actressjob.jpg";
+import singerjob from "./singerjob.jpg";
+import dancerjob from "./dancerjob.jpg";
+import camerajob from "./camerajob.jpg";
+import actress2job from "./actress2job.jpg";
+import actor2job from "./actor2job.jpg";
+import voicejob from "./voicejob.jpg";
+
+import ton from "./default.jpg";
 
 
 export {
+ ton,
   brainwave,
   SelectifyLogo,
   SelectifyTabLogo,
@@ -280,5 +292,13 @@ export {
   owl6,
   muthu,
   venky,
-  anumaam
+  anumaam,
+  actorjob,
+  actressjob,
+  singerjob,
+  dancerjob,
+  camerajob,
+  actress2job,
+  actor2job,
+  voicejob,
 };

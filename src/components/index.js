@@ -30,6 +30,7 @@ import IdentifyRoles from "./IdentifyRoles.jsx";
 import ScreenProfiles from "./ScreenProfiles.jsx";
 import SummarizeData from "./SummarizeData.jsx";
 import IdentifyData from "./IdentifyData.jsx";
+import ScreenProfileTable from "./ScreenProfileTable.jsx";
 
 
 export {
@@ -66,5 +67,6 @@ export {
     IdentifyRoles,
     ScreenProfiles,
     SummarizeData,
-    IdentifyData
+    IdentifyData,
+    ScreenProfileTable
 }

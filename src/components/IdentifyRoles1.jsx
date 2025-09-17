@@ -6,7 +6,6 @@ import { summary } from "../constants";
 import { useNavigate } from 'react-router-dom';
 
 import { heroBackground } from '../assets';
-import Section from './Section';
 
 function IdentifyRoles() {
 	const [text,setText] =useState('');
@@ -15,25 +14,9 @@ function IdentifyRoles() {
   const [error, setError] = useState(null);
 	const [button,setButton] =useState(false);
 
-    const [results, setResults] = useState('');
-  
-    const handleInputChange = (e) => {
-      setText(e.target.value);
-    };
-  
-    const handleSubmit = async () => {
-      try {
-        const response = await fetch(`http://localhost:5432/identifyroles?q=${text}`);
-        const data = await response.json();
-        // setResults(data.results);
-        setResults(data.result);
-        console.log(data);
-        console.log(data.result);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
+	const handleInputChange = (e) => {
+    setText(e.target.value);
+  };
 	        // Error state
 
   const navigate = useNavigate();
@@ -91,10 +74,8 @@ function IdentifyRoles() {
       ></div>
 
       {/* Main Content */}
-      <Header />
-      <div className="flex flex-col items-center justify-center h-full space-y-8 z-10 relative p-8">
-        
-
+      <div className="flex flex-col items-center justify-center h-full space-y-8 z-10 relative">
+        <Header />
 
         {/* Card Section */}
         <div className="relative p-12 bg-black bg-opacity-60 rounded-2xl shadow-lg w-full max-w-3xl">
@@ -114,10 +95,10 @@ function IdentifyRoles() {
             <div className="flex justify-center space-x-6 mt-6">
 
                     <button
-                        onClick={handleSubmit}
+                        onClick={handleClick}
                         className="px-8 py-4 bg-gradient-to-r from-blue-800 to-purple-500 text-white font-semibold rounded-full transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50"
                     >
-                        Fetch roles
+                        Fetch and Show Table Data
                     </button>
 
  
@@ -129,31 +110,20 @@ function IdentifyRoles() {
                 </div>
           </div>
         </div>
+ 
 
-        <Section>
-        
+        {/* Loading Indicator */}
         {loading && <p className="text-white">Loading data...</p>}
 
-        
+        {/* Error Message */}
         {error && <p className="text-red-500">Error: {error}</p>}
 
         {/* Table Section */}
-        {results && (
-          <div className=" mt-8 bg-black p-20 rounded-lg shadow-lg max-h-96">
-            {/* <p>{results[0].age}</p>
-            {results.map((item, index) => (
-              <div key={index}>
-                <p>Age: {item.age}</p>
-                <p>Description: {item.description}</p>
-              </div>
-            ))} */}
-
-            <table className="min-w-full table-auto">
+        {/* {summary.length > 0 && (
+          <div className="overflow-auto mt-8 bg-white p-6 rounded-lg shadow-lg max-h-96">
+            <table className="table-auto w-full border-collapse border border-gray-300">
               <thead>
-                <tr>
-                  {/* <th className="border px-4 py-2">Age</th>
-                  <th className="border px-4 py-2">Description</th>
-                  <th className="border px-4 py-2">Name</th> */}
+                <tr className="bg-gray-200">
                   <th className="border border-gray-300 px-4 py-2 text-left">Age</th>
                   <th className="border border-gray-300 px-4 py-2 text-left">Gender</th>
                   <th className="border border-gray-300 px-4 py-2 text-left">Location</th>
@@ -163,11 +133,8 @@ function IdentifyRoles() {
                 </tr>
               </thead>
               <tbody>
-                {results.map((item, index) => (
-                  <tr key={index} className="hover:bg-gray-900">
-                    {/* <td className="border px-4 py-2">{item.age}</td>
-                    <td className="border px-4 py-2">{item.description}</td>
-                    <td className="border px-4 py-2">{item.name}</td> */}
+                {summary.map((item, index) => (
+                  <tr key={index} className="hover:bg-gray-100">
                     <td className="border border-gray-300 px-4 py-2">{item.age}</td>
                     <td className="border border-gray-300 px-4 py-2">{item.gender}</td>
                     <td className="border border-gray-300 px-4 py-2">{item.location}</td>
@@ -178,41 +145,8 @@ function IdentifyRoles() {
                 ))}
               </tbody>
             </table>
-
-            <Link to="/tools">
-              <button className="mt-4 px-8 py-4 bg-gradient-to-r from-blue-800 to-purple-500 text-white font-semibold rounded-full transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50">
-                Back to Tools
-              </button>
-            </Link>
-
-
-            {/* <table className="table-auto w-full border-collapse border border-gray-300">
-              <thead>
-                <tr className="bg-black">
-                  <th className="border border-gray-300 px-4 py-2 text-left">Age</th>
-                  <th className="border border-gray-300 px-4 py-2 text-left">Gender</th>
-                  <th className="border border-gray-300 px-4 py-2 text-left">Location</th>
-                  <th className="border border-gray-300 px-4 py-2 text-left">Roles</th>
-                  <th className="border border-gray-300 px-4 py-2 text-left">Script Context</th>
-                  <th className="border border-gray-300 px-4 py-2 text-left">Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                {results.map((item, index) => (
-                  <tr key={index} className="hover:bg-gray-900">
-                    <td className="border border-gray-300 px-4 py-2">{item.age}</td>
-                    <td className="border border-gray-300 px-4 py-2">{item.gender}</td>
-                    <td className="border border-gray-300 px-4 py-2">{item.location}</td>
-                    <td className="border border-gray-300 px-4 py-2">{item.roles}</td>
-                    <td className="border border-gray-300 px-4 py-2">{item.script_context}</td>
-                    <td className="border border-gray-300 px-4 py-2">{item.description}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table> */}
           </div>
-        )}
-        </Section>
+        )} */}
       </div>
 
       {/* Footer Section */}
